@@ -15,11 +15,11 @@ const Performance = () => {
                         <h2 className='text-5xl font-semibold'>World Class Logistic and Transpotation Service</h2>
                     </div>
                     <p style={{ fontFamily: 'roboto' }} className='text-xl text-justify'>Fusce lorem nunc, sollicitudin eget eaccumsan temp Curabitu quis ullamcorper neque. Donec pullmassad arcu necfa lectus rhon. Praeset utvelinon augueining haselu ornare liberone acce volupat Nulla nvenenats enim, quis accumsan keque tortor eu felis.</p>
-                    <div className='relative'>
-                        <img src={welcomeSmallImage} loading='lazy' alt="welcome-small-image" className='rounded-xl relative' />
-                        <div className='absolute top-10 left-10  w-60 flex flex-col gap-5'>
-                            <h2 className='text-white text-3xl'>Successful Delivery We Have Done</h2>
-                            <p className='bg-white px-5 py-2 w-25 text-xl rounded-full'>1600+</p>
+                    <div className='relative w-full'>
+                        <img src={welcomeSmallImage} loading='lazy' alt="welcome-small-image" className='rounded-xl relative w-full' />
+                        <div className='absolute top-10 left-20  w-70 flex flex-col gap-5'>
+                            <h2 className='text-white text-4xl'>Successful Delivery We Have Done</h2>
+                            <p className='bg-white px-5 py-3 w-50 text-center text-3xl font-bold rounded-full'>1600+</p>
                         </div>
                     </div>
                 </div>

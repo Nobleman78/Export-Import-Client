@@ -2,6 +2,8 @@ import React from 'react';
 import HeroSection from '../components/HeroSection';
 import Capabilities from '../sections/Capabilities';
 import Performance from '../sections/Performance';
+import Service from '../sections/Service/Service';
+
 
 const Home = () => {
     return (
@@ -9,6 +11,7 @@ const Home = () => {
             <HeroSection/>
             <Capabilities/>
             <Performance/>
+            <Service/>
         </div>
     );
 };
