@@ -3,7 +3,8 @@ import HeroSection from '../components/HeroSection';
 import Capabilities from '../sections/Capabilities';
 import Performance from '../sections/Performance';
 import Service from '../sections/Service/Service';
-
+import ChooseUs from '../sections/Choose/ChooseUs';
+import Promises from '../sections/Promises/Promises';
 
 const Home = () => {
     return (
@@ -12,6 +13,9 @@ const Home = () => {
             <Capabilities/>
             <Performance/>
             <Service/>
+            <ChooseUs/>
+            <Promises/>
+          
         </div>
     );
 };
