@@ -60,8 +60,8 @@ const Testimonial = () => {
     }
 
     return (
-        <div className='bg-gray-100 h-[800px]'>
-            <main className='mt-20 py-50 relative'>
+        <div className='bg-gray-100 h-[750px]'>
+            <main className='mt-20 py-45 relative'>
                 <img className='absolute top-[-7rem] left-20 rounded-2xl' src={workImageThree} alt='Decorative' />
                 <div className='text-center  flex flex-col gap-3'>
                     <h2 className='text-2xl'>Testimonials</h2>
@@ -71,54 +71,57 @@ const Testimonial = () => {
                 </div>
 
                 <div className='px-20 '>
-                    <Swiper
-                        slidesPerView={1}
-                        effect='fade'
-                        navigation={true}
-                        speed={2000}
-                        autoplay={{
-                            delay: 1000,
-                            disableOnInteraction: false,
-                        }}
-                        spaceBetween={30}
-                        pagination={{ clickable: true }}
-                        modules={[FreeMode, Pagination, Autoplay]}
-                        className='mySwiper'>
-                        {groupedTestimonials.map((group, groupIndex) => (
-                            <SwiperSlide key={groupIndex}>
-                                <div style={{ fontFamily: 'Poppins, sans-serif' }}
-                                    className='bg-white rounded-2xl py-20 mt-10 border border-gray-300 flex'>
-                                    {group.map((testimonial, index) => (
-                                        <div key={index}
-                                            className={`w-1/2 p-8 flex flex-col justify-between ${index === 0 ? 'border-r-2  border-gray-200' : ''
-                                                }`}>
-                                            <div className='flex items-center gap-4 mb-4 justify-between'>
-                                                <div className='flex items-center gap-4'>
-                                                    <div className='bg-gray-200 px-5 py-3 rounded-full'>
-                                                        <img src={testimonial.image}
-                                                            alt='testimonial-image'
-                                                            loading='lazy'
-                                                            className='w-12 h-15 rounded-full' />
+                    <div className='bg-white rounded-2xl py-20 mt-10 border border-gray-300 shadow-2xl'>
+                        <Swiper
+                            slidesPerView={1}
+                            effect='fade'
+                            navigation={true}
+                            speed={2000}
+                            autoplay={{
+                                delay: 1000,
+                                disableOnInteraction: false,
+                            }}
+                            spaceBetween={30}
+                            pagination={{ clickable: true }}
+                            modules={[FreeMode, Pagination, Autoplay]}
+                            className='mySwiper'>
+                            {groupedTestimonials.map((group, groupIndex) => (
+                                <SwiperSlide key={groupIndex}>
+                                    <div style={{ fontFamily: 'Poppins, sans-serif' }}
+                                        className='flex'>
+                                        {group.map((testimonial, index) => (
+                                            <div key={index}
+                                                className={`w-1/2  p-8  flex flex-col justify-between ${index === 0 ? 'border-r-2 h-65 border-gray-200 ' : ''
+                                                    }`}>
+                                                <div className='flex items-center gap-4 mb-4 justify-between'>
+                                                    <div className='flex items-center gap-4 '>
+                                                        <div className='bg-gray-200 px-5 py-3 rounded-full'>
+                                                            <img src={testimonial.image}
+                                                                alt='testimonial-image'
+                                                                loading='lazy'
+                                                                className='w-12 h-15 rounded-full' />
+                                                        </div>
+                                                        <div >
+                                                            <h3 className='font-bold text-xl'>{testimonial.name}</h3>
+                                                            <p className='text-lg '>{testimonial.role}</p>
+                                                        </div>
                                                     </div>
-                                                    <div >
-                                                        <h3 className='font-bold text-xl'>{testimonial.name}</h3>
-                                                        <p className='text-lg '>{testimonial.role}</p>
-                                                    </div>
-                                                </div>
 
-                                                <div className='text-right text-5xl '>
-                                                    <FaQuoteRight />
+                                                    <div className='text-right text-5xl '>
+                                                        <FaQuoteRight />
+                                                    </div>
                                                 </div>
+                                                <p className='mb-4 text-lg leading-relaxed'>
+                                                    {testimonial.feedback}
+                                                </p>
                                             </div>
-                                            <p className='mb-4 text-lg leading-relaxed'>
-                                                {testimonial.feedback}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                                        ))}
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+
                 </div>
             </main>
         </div>

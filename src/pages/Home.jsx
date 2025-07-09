@@ -9,6 +9,10 @@ import Features from '../sections/Features/Features';
 import WorkingPrinciple from '../sections/WorkingPrinciple';
 import Testimonial from '../sections/Testimonial';
 import OurProcess from '../sections/OurProcess';
+import Blog from '../sections/Blog/Blog';
+import FAQQuoteSection from '../sections/Faq';
+import CalltoAction from '../sections/CalltoAction';
+
 
 
 const Home = () => {
@@ -24,6 +28,9 @@ const Home = () => {
             <WorkingPrinciple/>
             <Testimonial/>  
             <OurProcess/> 
+            <Blog/>
+            <FAQQuoteSection/>
+            <CalltoAction/>
         </div>
     );
 };
