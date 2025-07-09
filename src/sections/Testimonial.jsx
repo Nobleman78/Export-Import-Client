@@ -2,7 +2,7 @@ import React from 'react';
 import workImageThree from '../assets/WorkingPrinciple/work-image3.jpg';
 import avatar from '../assets/Testimonial/testimonial-image1.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination } from 'swiper/modules';
+import { Autoplay, FreeMode, Pagination } from 'swiper/modules';
 import { FaQuoteRight } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -60,9 +60,8 @@ const Testimonial = () => {
     }
 
     return (
-        <div className='bg-gray-100'>
-            <main className='mt-20 py-40 relative'>
-
+        <div className='bg-gray-100 h-[800px]'>
+            <main className='mt-20 py-50 relative'>
                 <img className='absolute top-[-7rem] left-20 rounded-2xl' src={workImageThree} alt='Decorative' />
                 <div className='text-center  flex flex-col gap-3'>
                     <h2 className='text-2xl'>Testimonials</h2>
@@ -71,24 +70,24 @@ const Testimonial = () => {
                     </p>
                 </div>
 
-                <div className='px-20 pb-20'>
+                <div className='px-20 '>
                     <Swiper
                         slidesPerView={1}
                         effect='fade'
                         navigation={true}
                         speed={2000}
                         autoplay={{
-                            delay: 3000,
+                            delay: 1000,
                             disableOnInteraction: false,
                         }}
                         spaceBetween={30}
                         pagination={{ clickable: true }}
-                        modules={[FreeMode, Pagination]}
+                        modules={[FreeMode, Pagination, Autoplay]}
                         className='mySwiper'>
                         {groupedTestimonials.map((group, groupIndex) => (
                             <SwiperSlide key={groupIndex}>
                                 <div style={{ fontFamily: 'Poppins, sans-serif' }}
-                                    className='bg-white rounded-2xl py-20 mt-10 shadow-md flex'>
+                                    className='bg-white rounded-2xl py-20 mt-10 border border-gray-300 flex'>
                                     {group.map((testimonial, index) => (
                                         <div key={index}
                                             className={`w-1/2 p-8 flex flex-col justify-between ${index === 0 ? 'border-r-2  border-gray-200' : ''

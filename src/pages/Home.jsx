@@ -8,6 +8,7 @@ import Promises from '../sections/Promises/Promises';
 import Features from '../sections/Features/Features';
 import WorkingPrinciple from '../sections/WorkingPrinciple';
 import Testimonial from '../sections/Testimonial';
+import OurProcess from '../sections/OurProcess';
 
 
 const Home = () => {
@@ -21,7 +22,8 @@ const Home = () => {
             <Promises/>
             <Features/>
             <WorkingPrinciple/>
-            <Testimonial/>   
+            <Testimonial/>  
+            <OurProcess/> 
         </div>
     );
 };
