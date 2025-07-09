@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
     const { image, title, des } = service
-    console.log(image, title, des)
     return (
         <div>
             <Link to={`${title}`}> <main className='mt-10 px-10 text-white py-10 rounded-3xl bg-gradient-to-b from-[#3eb492] to-[#168a8d] flex flex-col gap-5 items-center'>

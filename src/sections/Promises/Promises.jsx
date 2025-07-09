@@ -34,7 +34,7 @@ const Promises = () => {
                     Delivering Possibilities On Time
                 </h2>
 
-                <div className='max-w-7xl mx-auto bg-white p-10 rounded-3xl shadow-2xl mt-10 '>
+                <div className='max-w-7xl mx-auto bg-white p-10 rounded-3xl shadow-2xl mt-10 px-20 '>
                     {/* Combined Columns and Stats Section */}
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
                         {columns.map((col, colIndex) => (
@@ -68,6 +68,7 @@ const Promises = () => {
                         ))}
                     </div>
                 </div>
+            
             </main>
         </div>
     );

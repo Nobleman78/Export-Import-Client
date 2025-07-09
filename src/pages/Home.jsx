@@ -5,6 +5,9 @@ import Performance from '../sections/Performance';
 import Service from '../sections/Service/Service';
 import ChooseUs from '../sections/Choose/ChooseUs';
 import Promises from '../sections/Promises/Promises';
+import Features from '../sections/Features/Features';
+import WorkingPrinciple from '../sections/WorkingPrinciple';
+
 
 const Home = () => {
     return (
@@ -15,6 +18,9 @@ const Home = () => {
             <Service/>
             <ChooseUs/>
             <Promises/>
+            <Features/>
+            <WorkingPrinciple/>
+            
           
         </div>
     );

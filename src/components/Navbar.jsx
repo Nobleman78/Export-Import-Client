@@ -29,7 +29,7 @@ const Navbar = () => {
                 <div className='flex items-center gap-3 cursor-pointer'>
                     <img src={phoneIcon} loading='lazy' alt="" />
                     <div>
-                        <h2 className='text-[#1e928e] font-semibold'>Have Any Question</h2>
+                        <h2 style={{fontFamily:'roboto'}} className='text-[#1e928e] font-semibold'>Have Any Question</h2>
                         <p className='text-xl font-bold'>123 456 7890</p>
                     </div>
                 </div>
