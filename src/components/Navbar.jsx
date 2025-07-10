@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import logo from '../assets/NavImages/logo.png';
-import phoneIcon from '../assets/NavImages/phoneicon.jpg';
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { HiMenu, HiX } from 'react-icons/hi';
@@ -24,7 +23,7 @@ const Navbar = () => {
 
                     {/* "Have Any Question" moves below on small screens */}
                     <div className='flex sm:hidden items-start gap-3'>
-                        <img src={phoneIcon} className='w-10 h-10 object-cover' loading='lazy' alt="phone" />
+                        {/* <img src={phoneIcon} className='w-10 h-10 object-cover' loading='lazy' alt="phone" /> */}
                         <div>
                             <h2 style={{ fontFamily: 'Roboto' }} className='text-[#1e928e] font-semibold'>Have Any Question</h2>
                             <p className='text-lg font-bold'>123 456 7890</p>
@@ -73,7 +72,6 @@ const Navbar = () => {
 
                 {/* Phone section for desktop only */}
                 <div className='hidden sm:flex items-center gap-3 cursor-pointer'>
-                    <img src={phoneIcon} className='w-10 h-10 object-cover' loading='lazy' alt="phone" />
                     <div>
                         <h2 style={{ fontFamily: 'Roboto' }} className='text-[#1e928e] font-semibold'>Have Any Question</h2>
                         <p className='text-lg font-bold'>123 456 7890</p>
