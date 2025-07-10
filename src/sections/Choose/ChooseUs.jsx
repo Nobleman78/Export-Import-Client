@@ -31,11 +31,11 @@ const ChooseUs = () => {
     ]
     return (
         <div className='bg-gray-100'>
-            <main className='flex mx-20 mt-15 py-20 '>
-                <div className='w-1/2 flex flex-col gap-10'>
-                    <div className='flex flex-col gap-4'>
-                        <h2 className='text-3xl'>Why Choose Us</h2>
-                        <p className='text-5xl font-bold w-[500px]'>The Fastest Way To Send & Receive</p>
+            <main className='flex flex-col gap-5 md:flex-row px-10 md:px-5 lg:px-20 mt-15 py-20 '>
+                <div className='w-full sm:w-1/2 flex flex-col gap-10'>
+                    <div className='flex flex-col gap-4 text-center md:text-start'>
+                        <h2 className='text-lg md:text-xl lg:text-3xl'>Why Choose Us</h2>
+                        <p className='text-2xl md:text-3xl lg:text-5xl font-bold sm:w-[500px]'>The Fastest Way To Send & Receive</p>
 
                     </div>
                     {
@@ -43,7 +43,7 @@ const ChooseUs = () => {
                     }
 
                 </div>
-                <div className='w-1/2'>
+                <div className='w-full sm:w-1/2 '>
                     <img loading='lazy' className='animate-fadey' src={Chooseus} alt="choose-us" />
                 </div>
             </main>

@@ -30,10 +30,10 @@ const Features = () => {
     ]
     return (
         <div className='bg-[#006364]'>
-            <main className='mt-10 flex items-center px-20 py-15 gap-5'>
+            <main className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center px-10 sm:px-20 py-15 gap-5'>
                 {
                     features.map((feature, index) => (
-                        <div key={index} className='flex flex-col items-center gap-5 bg-[#286d6e] py-10 px-5 rounded text-white'>
+                        <div key={index} className='flex flex-col  items-center gap-5 bg-[#286d6e] py-10 px-5 rounded-2xl text-white'>
                             <div className='bg-[#2c888a] p-10 rounded-full transform hover:scale-110 transition duration-300 inline-block'>
                                 <img
                                     className='w-16 h-16 object-contain'

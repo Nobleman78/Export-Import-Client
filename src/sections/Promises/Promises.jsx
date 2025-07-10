@@ -30,7 +30,7 @@ const Promises = () => {
     return (
         <div>
             <main className='mt-20 w-full'>
-                <h2 className='text-center text-5xl font-bold max-w-lg mx-auto'>
+                <h2 className='text-center text-4xl sm:text-5xl font-bold max-w-lg mx-auto '>
                     Delivering Possibilities On Time
                 </h2>
 

@@ -15,8 +15,8 @@ const images = [
 const WorkingPrinciple = () => {
     return (
         <div>
-            <main className='mt-20 flex gap-20 px-20'>
-                <div className='flex  gap-5 w-1/2 h-full '>
+            <main className='mt-20 flex flex-col lg:flex-row gap-20 px-5 lg:px-20'>
+                <div className='flex flex-col md:flex-row gap-5 md:gap-10 md:px-10 w-full lg:w-1/2 h-full '>
                     {images.map((image, index) => (
                         <img
                             key={index}
@@ -27,32 +27,32 @@ const WorkingPrinciple = () => {
                         />
                     ))}
                 </div>
-                <div className='w-1/2 px-10 flex flex-col gap-8 '>
+                <div className='w-full lg:w-1/2 sm:px-10 flex flex-col gap-8  '>
                     <div className='flex flex-col gap-3'>
                         <h2 className='text-3xl'>How It Works</h2>
                         <p className='text-5xl font-semibold'>We Provide Timely and Cost Effective.</p>
                     </div>
                     <p style={{fontFamily:'roboto'}} className='text-xl'>Fusce lorem nunc, sollicitudin eget eaccumsan temp Curabitu quis ullamcorper neque. Donec pullmassad arcu necfa lectus rhon.</p>
                     {/* Middle Part */}
-                    <div className='flex gap-4 '>
-                        <div className='flex items-center gap-3 w-1/2'>
+                    <div className='flex flex-col md:flex-row gap-6 sm:gap-4 '>
+                        <div className='flex items-center gap-3 w-full sm:w-1/2'>
                             <img className='border-2 border-gray-200 p-1 rounded-xl' src={workIconOne} alt="work-icon-one" />
-                            <div className='flex flex-col font-semibold text-lg text-gray-800'>
+                            <div className='flex lg:flex-col font-semibold text-lg text-gray-800 gap-2'>
                                 <h2>General Air Freight</h2>
                                 <p>Products</p>
                             </div>
                         </div>
-                        <div className='flex items-center gap-3 w-1/2'>
+                        <div className='flex items-center gap-3 w-full sm:w-1/2'>
                             <img className='border-2 border-gray-200 p-1 rounded-xl' src={workIconTwo} alt="work-icon-two" />
-                            <div className='flex flex-col text-lg font-semibold text-gray-800'>
+                            <div className='flex lg:flex-col  text-lg font-semibold text-gray-800 gap-2'>
                                 <h2>Less Container</h2>
                                 <p>Loading</p>
                             </div>
                         </div>
                     </div>
                     {/* End Part */}
-                    <div className='flex gap-3'>
-                        <div className='flex flex-col gap-4  w-1/2 text-lg text-gray-800 font-semibold'>
+                    <div className='flex flex-col md:flex-row gap-3'>
+                        <div className='flex flex-col gap-4 w-full sm:w-1/2 text-lg text-gray-800 font-semibold'>
                             <div className='flex items-center gap-2'>
                                 <IoIosArrowForward  className='text-[#15898D]'/>
                                 <h2>Managing logistics for world</h2>
@@ -62,7 +62,7 @@ const WorkingPrinciple = () => {
                                 <h2>We Guarantee Service</h2>
                             </div>
                         </div>
-                        <div className='flex gap-7 w-1/2'>
+                        <div className='flex gap-7 w-full sm:w-1/2'>
                             <img className='w-10 h-10' src={workContact} alt="work-contact-image" />
                             <div className=''>
                                 <h2 className='text-2xl'>123 456 789</h2>

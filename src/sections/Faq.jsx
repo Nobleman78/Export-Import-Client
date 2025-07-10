@@ -28,8 +28,8 @@ const FAQQuoteSection = () => {
 
     return (
        
-        <section className='grid grid-cols-1 md:grid-cols-2 border-2 mt-20 border-[#2BA89C] rounded-[2rem] overflow-hidden shadow-lg max-w-6xl mx-auto my-8 font-inter'>
-            <div className='bg-[#2BA89C] text-white p-8 sm:p-10 rounded-l-[1.9rem] flex flex-col justify-start gap-6'>
+        <section className='grid grid-cols-1 md:grid-cols-2 border-2 mt-20 border-[#2BA89C] rounded-[2rem] overflow-hidden shadow-lg max-w-6xl mx-auto my-8 font-inter  '>
+            <div className='bg-[#2BA89C] text-white p-8 sm:p-10 rounded-l-[1.9rem] flex flex-col justify-start gap-6 '>
                 <div className='flex-shrink-0'> 
                     <p className='text-lg font-semibold'>Frequently Asked Questions</p>
                     <h2 className='text-3xl sm:text-4xl font-bold leading-tight mt-2'>

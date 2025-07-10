@@ -32,7 +32,7 @@ const Blog = () => {
                     <h2 className='text-2xl font-semibold'>From the blog</h2>
                     <p className='text-5xl max-w-md mx-auto font-bold'>Check Our Latest News & Articles</p>
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-20 mt-20 gap-8'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 lg:mx-20 mt-20 gap-8'>
                     {
                         blog.map((blog, index) => (<BlogCard key={index} blog={blog}></BlogCard>))
                     }

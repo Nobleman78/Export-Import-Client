@@ -28,32 +28,47 @@ const Footer = () => {
     ];
 
     return (
-        <footer className='mt-15 flex flex-col md:flex-row items-start md:items-center justify-between px-15 py-10 bg-gray-50'>
-            {/* Logo and Description */}
-            <div className='mb-8 md:mb-0'>
-                <Link to='/' onClick={() => window.scrollTo(0, 0)}>
-                    <img src={logo} loading='lazy' alt='Company Logo' className='w-40 cursor-pointer' />
-                </Link>
-                <p className='mt-3 max-w-xs text-gray-600'>
-                    We provide comprehensive import-export solutions tailored to your business needs.
-                </p>
+        <footer className='bg-gray-50 px-10 py-10 mt-10 text-gray-800'>
+            <div className='flex flex-col lg:flex-row justify-between gap-10'>
+                {/* Logo and Description */}
+                <div className='max-w-sm'>
+                    <Link to='/' onClick={() => window.scrollTo(0, 0)}>
+                        <img src={logo} loading='lazy' alt='Company Logo' className='w-40 cursor-pointer' />
+                    </Link>
+                    <p className='mt-4 text-gray-600'>
+                        We provide comprehensive import-export solutions tailored to your business needs.
+                    </p>
+                </div>
+
+                {/* Dynamic Sections */}
+                <div className='flex flex-wrap gap-10'>
+                    {footerLinks.map((section, index) => (
+                        <div key={index}>
+                            <h3 className='font-semibold mb-3'>{section.title}</h3>
+                            <ul className='space-y-2'>
+                                {section.items.map((item, i) => (
+                                    <li key={i} className='flex items-center gap-2 hover:translate-x-2 transition-transform duration-300 cursor-pointer'>
+                                        <MdOutlineDoubleArrow className='text-teal-600' />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            {/* Dynamic Sections */}
-            <div className='flex flex-wrap gap-20 text-lg text-gray-800'>
-                {footerLinks.map((section, index) => (
-                    <div key={index}>
-                        <h3 className='font-semibold mb-3 cursor-default'>{section.title}</h3>
-                        <ul className='space-y-2'>
-                            {section.items.map((item, i) => (
-                                <li key={i} className='flex items-center gap-2 transition hover:translate-x-4 duration-600 cursor-pointer'>
-                                    <MdOutlineDoubleArrow />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+            {/* Developer Credit */}
+            <div className='text-center mt-10 text-sm text-gray-500'>
+                Design and Developed by{' '}
+                <a
+                    href="https://www.nextitbd.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='text-blue-600 hover:underline'
+                >
+                    Next IT BD
+                </a>
             </div>
         </footer>
     );

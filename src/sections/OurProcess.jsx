@@ -20,7 +20,7 @@ const OurProcess = () => {
 
     return (
         <div className='mt-40'>
-            <main className='mx-6 md:mx-20 flex flex-col md:flex-row gap-12 md:gap-20'>
+            <main className='mx-6 lg:mx-20 flex flex-col md:flex-row gap-12 lg:gap-20'>
                 {/* Left Section */}
                 <section className='flex flex-col gap-10 w-full md:w-1/2'>
                     <div className='flex flex-col gap-3'>

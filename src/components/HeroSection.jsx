@@ -10,7 +10,7 @@ import slider3 from '../assets/HeroImages/slider3.jpg';
 const HeroSection = () => {
     return (
         <div>
-            <main className="relative w-full h-screen">
+            <main className="relative w-full lg:h-screen">
                 <Swiper
                     spaceBetween={30}
                     effect="fade"
@@ -24,25 +24,29 @@ const HeroSection = () => {
                         clickable: true,
                     }}
                     modules={[Autoplay, EffectFade, Navigation, Pagination]}
-                    className="mySwiper w-full h-full">
+                    className="mySwiper w-full h-full"
+                >
                     <SwiperSlide>
-                        <img src={slider1} loading='lazy' alt="Slide 1" className="w-full h-full object-cover" />
+                        <img src={slider1} loading="lazy" alt="Slide 1" className="w-full lg:h-full  object-cover" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src={slider2} loading='lazy' alt="Slide 2" className="w-full h-full object-cover" />
+                        <img src={slider2} loading="lazy" alt="Slide 2" className="w-full lg:h-full object-cover" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img src={slider3} loading='lazy' alt="Slide 3" className="w-full h-full object-cover" />
+                        <img src={slider3} loading="lazy" alt="Slide 3" className="w-full lg:h-full object-cover" />
                     </SwiperSlide>
                 </Swiper>
 
-                <div className="absolute left-0 top-40 z-10 flex flex-col gap-10 text-white px-15 w-full">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg w-1/2">
-                        Import Export Excellence Beyond Boundaries
-                    </h2>
-                    <button className="mt-2 px-3 py-5 bg-white hover:bg-[#15716c] hover:text-white font-bold transition text-lg text-black rounded-full shadow-md w-45 cursor-pointer">
-                        Learn More
-                    </button>
+                {/* Text part */}
+                <div className="absolute inset-0 z-10 flex items-center justify-start px-4 sm:px-10">
+                    <div className="text-white w-full max-w-2xl">
+                        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg leading-tight">
+                            Import Export Excellence <br className="hidden sm:block" /> Beyond Boundaries
+                        </h2>
+                        <button className="mt-4 px-6 py-3 sm:px-8 sm:py-4 bg-white hover:bg-[#15716c] hover:text-white font-semibold text-base sm:text-lg text-black rounded-full shadow-md transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
                 </div>
             </main>
         </div>

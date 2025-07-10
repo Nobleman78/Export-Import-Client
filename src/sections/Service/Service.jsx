@@ -47,9 +47,9 @@ const Service = () => {
             <main className='mt-10'>
                 <div className='text-center flex flex-col gap-3'>
                     <h2 className='text-2xl font-semibold'>What We Do</h2>
-                    <p className='text-5xl font-bold max-w-2xl mx-auto'>Providing Full Range of Import Export Solution</p>
+                    <p className='text-3xl sm:text-5xl font-bold max-w-2xl mx-auto'>Providing Full Range of Import Export Solution</p>
                 </div>
-                <div className='grid grid-cols-3 px-20 gap-5'>
+                <div className='grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 px-5 lg:px-20 gap-5'>
                     {services.map((service, index) => (<ServiceCard key={index} service={service}></ServiceCard>))}
                 </div>
             </main>
