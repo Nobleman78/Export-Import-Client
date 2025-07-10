@@ -34,23 +34,8 @@ const Navbar = () => {
 
                 {/* Desktop Menu */}
                 <div className='hidden lg:flex gap-10 text-lg font-semibold'>
-                    <NavLink to='/' className={navLinkClass}>Home</NavLink>
-
-                    {/* About with Dropdown - Fixed */}
-                    <div className='relative group'>
-                        <div className='flex items-center gap-1 cursor-pointer'>
-                            <NavLink to='/about' className={navLinkClass}>About</NavLink>
-                            <IoIosArrowDown className='mt-1 transform transition-transform duration-300 group-hover:rotate-180' />
-                        </div>
-                        {/* Added invisible padding bridge and transition */}
-                        <div className='absolute w-full text-sm top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out'>
-                            <div className='bg-white shadow-lg rounded-md py-2 px-4 z-50 border border-gray-100 w-50'>
-                                <NavLink to='/about/team' className='block hover:text-[#1e928e] text-black py-1'>Our Team</NavLink>
-                                <NavLink to='/about/history' className='block hover:text-[#1e928e] text-black py-1'>Our History</NavLink>
-                            </div>
-                        </div>
-                    </div>
-
+                    <NavLink onClick={() => window.scrollTo(0, 0)} to='/' className={navLinkClass}>Home</NavLink>
+                    <NavLink onClick={() => window.scrollTo(0, 0)} to='/about' className={navLinkClass}>About</NavLink>
                     <div className='relative group'>
                         <div className='flex items-center gap-1 cursor-pointer'>
                             <NavLink to='/services' className={navLinkClass}>Services</NavLink>
@@ -104,7 +89,7 @@ const Navbar = () => {
             {/* Mobile Navigation */}
             {menuOpen && (
                 <div className='lg:hidden bg-gray-200 py-5 flex flex-col gap-4 px-6 pb-4 text-base font-medium'>
-                    <NavLink to='/' onClick={toggleMenu} className={navLinkClass}>Home</NavLink>
+                    <NavLink to='/' onClick={ () => {window.scrollTo(0, 0),toggleMenu}} className={navLinkClass}>Home</NavLink>
                     <NavLink to='/about' onClick={toggleMenu} className={navLinkClass}>About</NavLink>
                     <NavLink to='/services' onClick={toggleMenu} className={navLinkClass}>Services</NavLink>
                     <NavLink to='/news' onClick={toggleMenu} className={navLinkClass}>News</NavLink>
