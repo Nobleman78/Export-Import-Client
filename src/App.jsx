@@ -1,38 +1,49 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import Footer from './components/Footer'
-import About from './pages/About'
-import Service from './pages/Service'
-import Product from './pages/Product'
-import Contact from './pages/Contact'
-import Export from './ServicePages/Export'
-import Import from './ServicePages/Import'
-import NewProduct from './ServicePages/NewProduct'
-import UsedProduct from './ServicePages/UsedProduct'
+import React, { Suspense, lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Notfound from './pages/Notfound';
 
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Service = lazy(() => import('./pages/Service'));
+const Product = lazy(() => import('./pages/Product'));
+const Contact = lazy(() => import('./pages/Contact'));
+
+const Export = lazy(() => import('./ServicePages/Export'));
+const Import = lazy(() => import('./ServicePages/Import'));
+const NewProduct = lazy(() => import('./ServicePages/NewProduct/NewProduct'));
+const UsedProduct = lazy(() => import('./ServicePages/UsedProduct/UsedProduct'));
+const ExportServiceRequest = lazy(()=>import('./ServicePages/ServiceRequest/ServiceRequest'))
 
 function App() {
-
   return (
     <div>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/about' element={<About />}></Route>
-        <Route path='/services' element={<Service />}></Route>
-        <Route path='/services/export' element={<Export />}></Route>
-        <Route path='/services/import' element={<Import />}></Route>
-        <Route path='/services/newProduct' element={<NewProduct />}></Route>
-        <Route path='/services/usedProduct' element={<UsedProduct />}></Route>
-        <Route path='/product' element={<Product />}></Route>
-        <Route path='/contact' element={<Contact />}></Route>
-
-      </Routes>
+      {/* Suspense boundary to show a loading fallback while lazy components are fetched */}
+      <Suspense fallback={
+        <div className="flex justify-center items-center h-screen text-xl text-gray-700">
+          Loading content...
+        </div>
+      }>
+        <Routes>
+          <Route path='*'element={<Notfound/>}></Route>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<Service />} />
+          <Route path='/services/export' element={<Export />} />
+          <Route path='/services/import' element={<Import />} />
+          <Route path='/services/newProduct' element={<NewProduct />} />
+          <Route path='/services/usedProduct' element={<UsedProduct />} />
+          <Route path='/services/export/request' element={<ExportServiceRequest />} />
+          <Route path='/product' element={<Product />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

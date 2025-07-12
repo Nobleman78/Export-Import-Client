@@ -1,4 +1,3 @@
-import React from 'react';
 import aboutImage from '../assets/Pages/default-header-img.jpg';
 import why from '../assets/Pages/why.webp';
 import what from '../assets/Pages/what.webp';
@@ -6,11 +5,14 @@ import how from '../assets/Pages/how.png';
 import team1 from '../assets/Pages/demo-team-one.avif';
 import team2 from '../assets/Pages/demo-team-two.webp';
 import team3 from '../assets/Pages/demo-team-three.avif';
+import team4 from '../assets/Pages/women-team-one.avif';
+import team5 from '../assets/Pages/women-team-two.webp';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFlip, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
+import { Helmet } from 'react-helmet';
 
 // Reusable card component
 const InfoCard = ({ title, text, image }) => (
@@ -45,27 +47,30 @@ const teamMembers = [
         bio: 'Maria is passionate about helping customers with import-export solutions.',
     },
     {
-        name: 'Alex Gomez',
-        role: 'Customer Relations',
-        image: team3,
-        bio: 'Maria is passionate about helping customers with import-export solutions.',
+        name: 'Serena Gomez',
+        role: 'HR',
+        image: team5,
+        bio: 'Serena Gomez is one of the best hr to handle all kinds of requritments.',
     },
     {
-        name: 'Alex Gomez',
-        role: 'Customer Relations',
-        image: team3,
-        bio: 'Maria is passionate about helping customers with import-export solutions.',
+        name: 'Linda Gomez',
+        role: 'Business Excutive',
+        image: team4,
+        bio: 'Linda Gomez has a strong business idea to grow the company.',
     },
 ];
 
 const About = () => {
     const missionText = 'We are passionate about empowering individuals to transform their lives through the power of global trade. We believe that everyone should have access to seamless, affordable, and reliable import-export services, regardless of scale.';
-
     return (
         <div>
+            <Helmet>
+                <title>About | Eximport</title>
+            </Helmet>
             <main>
                 <div className='relative'>
-                    <img src={aboutImage} loading='lazy' alt='about-image' className='w-full ' />
+                    <img src={aboutImage}
+                        sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px" loading='lazy' alt='about-image' className='w-full ' />
                     <h2 className='absolute inset-0 flex items-center justify-center text-white text-3xl sm:text-4xl md:text-5xl font-bold  bg-opacity-40'>
                         About Us
                     </h2>

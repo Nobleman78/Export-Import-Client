@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import logo from '../assets/NavImages/logo.png';
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { HiMenu, HiX } from 'react-icons/hi';
+
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -17,6 +18,7 @@ const Navbar = () => {
 
     return (
         <div className='sticky top-0 w-full z-50 bg-white shadow'>
+              
             <nav className='flex flex-col sm:flex-row items-start sm:items-center justify-between px-4 sm:px-20 py-5 gap-4 sm:gap-0'>
 
                 {/* Logo + Phone (stacked on mobile) */}
@@ -46,8 +48,8 @@ const Navbar = () => {
                         </div>
                         {/* Service Dropdown */}
                         {serviceDropDown && (
-                            <div className='absolute left-0 top-full pt-8'>
-                                <div className='w-48 bg-white shadow-lg text-sm rounded-md py-2 px-4 z-50 border border-gray-100'>
+                            <div className='absolute left-0 top-full pt-7'>
+                                <div className='w-48 bg-white shadow-lg text-sm rounded-md py-2 px-4 z-50 border-t-4 border-teal-800 '>
                                     <NavLink onClick={() => setServiceDropDown(false)} to='/services/export' className='block hover:text-[#1e928e] text-black py-1'>Export</NavLink>
                                     <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='block hover:text-[#1e928e] text-black py-1'>Import</NavLink>
                                     <NavLink onClick={() => setServiceDropDown(false)} to='/services/newProduct' className='block hover:text-[#1e928e] text-black py-1'>New Product Sell</NavLink>
@@ -64,8 +66,8 @@ const Navbar = () => {
                             <IoIosArrowDown className={`mt-1 transform transition-transform duration-300 ${productDropDown ? 'rotate-180' : ''}`} />
                         </div>
                         {/* Product DropDown */}
-                        {productDropDown && <div className='absolute top-full  left-0 pt-8'>
-                            <div className='bg-white shadow-lg text-sm rounded-md py-2 px-4 z-50 border border-gray-100 w-50'>
+                        {productDropDown && <div className='absolute top-full  left-0 pt-7'>
+                            <div className='bg-white shadow-lg text-sm rounded-md py-2 px-4 z-50 border-t-4 border-teal-800  w-50'>
                                 <NavLink onClick={() => setProductDropDown(false)} to='/product/new' className='block hover:text-[#1e928e] text-black py-1'>New Product</NavLink>
                                 <NavLink onClick={() => setProductDropDown(false)} to='/product/used' className='block hover:text-[#1e928e] text-black py-1'>Used Product</NavLink>
                             </div>
@@ -73,6 +75,7 @@ const Navbar = () => {
                     </div>
 
                     <NavLink to='/contact' className={navLinkClass}>Contact</NavLink>
+                    <NavLink to='/login' className={navLinkClass}>Login</NavLink>
                 </div>
 
                 {/* Phone section for desktop only */}
@@ -97,6 +100,7 @@ const Navbar = () => {
                     <NavLink to='/services' onClick={toggleMenu} className={navLinkClass}>Services</NavLink>
                     <NavLink to='/news' onClick={toggleMenu} className={navLinkClass}>News</NavLink>
                     <NavLink to='/contact' onClick={toggleMenu} className={navLinkClass}>Contact</NavLink>
+                    <NavLink to='/login'onClick={toggleMenu} className={navLinkClass}>Login</NavLink>
                 </div>
             )}
         </div>

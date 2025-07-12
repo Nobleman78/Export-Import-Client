@@ -61,7 +61,6 @@ const FAQQuoteSection = () => {
                 </div>
             </div>
 
-
             <div className='bg-white p-8 sm:p-10 rounded-r-[1.9rem] flex flex-col justify-start'>
                 <p className='text-lg font-semibold text-gray-700'>Know the Price</p>
                 <h2 className='text-3xl sm:text-4xl font-bold mb-6 text-gray-900'>Get A Free Quote</h2>

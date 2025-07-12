@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate, Outlet } from 'react-router-dom';
 
 const services = [
@@ -38,6 +39,9 @@ const Service = () => {
 
     return (
         <div className='bg-gray-50 min-h-screen py-10 px-6 lg:px-20'>
+            <Helmet>
+                <title>Service | Eximport</title>
+            </Helmet>
             <div className='max-w-7xl mx-auto text-center mb-12'>
                 <h2 className='text-4xl font-bold text-gray-800 mb-4'>Our Services</h2>
                 <p className='text-gray-600 max-w-2xl mx-auto'>
@@ -54,7 +58,7 @@ const Service = () => {
                         <button
                             className='bg-teal-600 text-white px-4 py-2 rounded-full hover:bg-teal-700 transition cursor-pointer'
                             onClick={() => navigate(service.route)}>
-                            Request Service
+                            Show More+
                         </button>
                     </div>
                 ))}

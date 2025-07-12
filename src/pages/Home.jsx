@@ -12,25 +12,29 @@ import OurProcess from '../sections/OurProcess';
 import Blog from '../sections/Blog/Blog';
 import FAQQuoteSection from '../sections/Faq';
 import CalltoAction from '../sections/CalltoAction';
+import { Helmet } from 'react-helmet';
 
 
 
 const Home = () => {
     return (
         <div>
-            <HeroSection/>
-            <Capabilities/>
-            <Performance/>
-            <Service/>
-            <ChooseUs/>
-            <Promises/>
-            <Features/>
-            <WorkingPrinciple/>
-            <Testimonial/>  
-            <OurProcess/> 
-            <Blog/>
-            <FAQQuoteSection/>
-            <CalltoAction/>
+            <Helmet>
+                <title>Home | Eximport</title>
+            </Helmet>
+            <HeroSection />
+            <Capabilities />
+            <Performance />
+            <Service />
+            <ChooseUs />
+            <Promises />
+            <Features />
+            <WorkingPrinciple />
+            <Testimonial />
+            <OurProcess />
+            <Blog />
+            <FAQQuoteSection />
+            <CalltoAction />
         </div>
     );
 };
