@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
                             Made in {product.madeIn}
                         </span>
                     </div>
-                    <button onClick={() => navigate('/contact')} className='mt-4 cursor-pointer bg-[#1e928e] hover:bg-[#15726f] text-white py-2 rounded-lg font-medium transition'>
+                    <button onClick={() => { navigate('/contact'), scrollTo(0, 0) }} className='mt-4 cursor-pointer bg-[#1e928e] hover:bg-[#15726f] text-white py-2 rounded-lg font-medium transition'>
                         Know More
                     </button>
                 </div>

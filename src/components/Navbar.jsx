@@ -61,7 +61,7 @@ const Navbar = () => {
 
                     {/* Product */}
                     <div className='relative' onMouseEnter={() => setProductDropDown(true)} onMouseLeave={() => setProductDropDown(false)}>
-                        <div className='flex items-center gap-1 cursor-pointer' onClick={() => setServiceDropDown(!serviceDropDown)}>
+                        <div className='flex items-center gap-1 cursor-pointer' onClick={() => setProductDropDown(!productDropDown)}>
                             <NavLink to='/product' className={navLinkClass}>Product</NavLink>
                             <IoIosArrowDown className={`mt-1 transform transition-transform duration-300 ${productDropDown ? 'rotate-180' : ''}`} />
                         </div>
@@ -74,8 +74,8 @@ const Navbar = () => {
                         </div>}
                     </div>
 
-                    <NavLink to='/contact' className={navLinkClass}>Contact</NavLink>
-                    <NavLink to='/login' className={navLinkClass}>Login</NavLink>
+                    <NavLink onClick={()=>scrollTo(0,0)} to='/contact' className={navLinkClass}>Contact</NavLink>
+                    <NavLink onClick={()=>scrollTo(0,0)} to='/login' className={navLinkClass}>Login</NavLink>
                 </div>
 
                 {/* Phone section for desktop only */}
@@ -98,7 +98,7 @@ const Navbar = () => {
                     <NavLink to='/' onClick={() => { window.scrollTo(0, 0), toggleMenu }} className={navLinkClass}>Home</NavLink>
                     <NavLink to='/about' onClick={toggleMenu} className={navLinkClass}>About</NavLink>
                     <NavLink to='/services' onClick={toggleMenu} className={navLinkClass}>Services</NavLink>
-                    <NavLink to='/news' onClick={toggleMenu} className={navLinkClass}>News</NavLink>
+                    <NavLink to='/product' onClick={toggleMenu} className={navLinkClass}>Product</NavLink>
                     <NavLink to='/contact' onClick={toggleMenu} className={navLinkClass}>Contact</NavLink>
                     <NavLink to='/login'onClick={toggleMenu} className={navLinkClass}>Login</NavLink>
                 </div>

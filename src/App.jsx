@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Notfound from './pages/Notfound';
+import Login from './pages/Login';
+import Registration from './pages/Registration';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -15,7 +17,7 @@ const Export = lazy(() => import('./ServicePages/Export'));
 const Import = lazy(() => import('./ServicePages/Import'));
 const NewProduct = lazy(() => import('./ServicePages/NewProduct/NewProduct'));
 const UsedProduct = lazy(() => import('./ServicePages/UsedProduct/UsedProduct'));
-const ExportServiceRequest = lazy(()=>import('./ServicePages/ServiceRequest/ServiceRequest'))
+const ExportServiceRequest = lazy(() => import('./ServicePages/ServiceRequest/ServiceRequest'))
 
 function App() {
   return (
@@ -28,7 +30,7 @@ function App() {
         </div>
       }>
         <Routes>
-          <Route path='*'element={<Notfound/>}></Route>
+          <Route path='*' element={<Notfound />}></Route>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/services' element={<Service />} />
@@ -39,6 +41,8 @@ function App() {
           <Route path='/services/export/request' element={<ExportServiceRequest />} />
           <Route path='/product' element={<Product />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/registration' element={<Registration />}></Route>
         </Routes>
       </Suspense>
       <Footer />

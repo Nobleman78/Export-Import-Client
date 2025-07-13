@@ -20,7 +20,7 @@ const Import = () => {
                 <li>🧾 <strong>Documentation & Compliance:</strong> Generate invoices, certificates, customs docs, HS code.</li>
                 <li>💰 <strong>Payment & Escrow:</strong> Secure payment gateway, milestone-based release, multi-currency support.</li>
             </ul>
-            <button onClick={() => navigate('/services/export/request')} className='mt-10 bg-[#1e928e] px-8 py-3 rounded-lg text-white font-semibold cursor-pointer hover:bg-[#305857] transition duration-400'>Request For Service</button>
+            <button onClick={() => {navigate('/services/export/request'),scrollTo(0,0)}} className='mt-10 bg-[#1e928e] px-8 py-3 rounded-lg text-white font-semibold cursor-pointer hover:bg-[#305857] transition duration-400'>Request For Service</button>
         </div>
     );
 };
