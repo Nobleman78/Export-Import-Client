@@ -80,12 +80,13 @@ const Navbar = () => {
 
                     <NavLink onClick={() => scrollTo(0, 0)} to='/contact' className={navLinkClass}>Contact</NavLink>
                     <div className='flex items-center'>
-                        {
-                            user ? <FaCircleUser className='cursor-pointer text-xl' /> : (
-                                <NavLink to="/login" className="bg-green-500 px-5 py-2 rounded text-white hover:bg-green-700 transition">
-                                    Login
-                                </NavLink>
-                            )}
+                        {/* {
+                            user ? <FaCircleUser className='cursor-pointer text-xl' /> : ( */}
+                        <NavLink to="/login" className="bg-green-500 px-5 py-2 rounded text-white hover:bg-green-700 transition">
+                            Login
+                        </NavLink>
+                        {/* )
+                        } */}
                     </div>
                 </div>
 
@@ -111,7 +112,7 @@ const Navbar = () => {
                     <NavLink to='/services' onClick={toggleMenu} className={navLinkClass}>Services</NavLink>
                     <NavLink to='/product' onClick={toggleMenu} className={navLinkClass}>Product</NavLink>
                     <NavLink to='/contact' onClick={toggleMenu} className={navLinkClass}>Contact</NavLink>
-                    {user ? <FaCircleUser /> : <NavLink to='/login' onClick={toggleMenu} className={navLinkClass}>Login</NavLink>}
+                    <NavLink to='/login' onClick={toggleMenu} className={navLinkClass}>Login</NavLink>
                 </div>
             )}
         </div>
