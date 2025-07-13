@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import logo from '../assets/NavImages/logo.png';
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { HiMenu, HiX } from 'react-icons/hi';
-
+import AuthContext from '../ContextApi/AuthContext';
+import { FaCircleUser } from 'react-icons/fa6';
 
 const Navbar = () => {
+    const { user, } = useContext(AuthContext)
     const [menuOpen, setMenuOpen] = useState(false);
     const [serviceDropDown, setServiceDropDown] = useState(false)
     const [productDropDown, setProductDropDown] = useState(false)
+
+
     const navLinkClass = ({ isActive }) =>
         isActive ? 'text-[#1e928e]' : 'hover:text-[#1e928e] text-black';
 
@@ -18,7 +22,7 @@ const Navbar = () => {
 
     return (
         <div className='sticky top-0 w-full z-50 bg-white shadow'>
-              
+
             <nav className='flex flex-col sm:flex-row items-start sm:items-center justify-between px-4 sm:px-20 py-5 gap-4 sm:gap-0'>
 
                 {/* Logo + Phone (stacked on mobile) */}
@@ -74,8 +78,15 @@ const Navbar = () => {
                         </div>}
                     </div>
 
-                    <NavLink onClick={()=>scrollTo(0,0)} to='/contact' className={navLinkClass}>Contact</NavLink>
-                    <NavLink onClick={()=>scrollTo(0,0)} to='/login' className={navLinkClass}>Login</NavLink>
+                    <NavLink onClick={() => scrollTo(0, 0)} to='/contact' className={navLinkClass}>Contact</NavLink>
+                    <div className='flex items-center'>
+                        {
+                            user ? <FaCircleUser className='cursor-pointer text-xl' /> : (
+                                <NavLink to="/login" className="bg-green-500 px-5 py-2 rounded text-white hover:bg-green-700 transition">
+                                    Login
+                                </NavLink>
+                            )}
+                    </div>
                 </div>
 
                 {/* Phone section for desktop only */}
@@ -100,7 +111,7 @@ const Navbar = () => {
                     <NavLink to='/services' onClick={toggleMenu} className={navLinkClass}>Services</NavLink>
                     <NavLink to='/product' onClick={toggleMenu} className={navLinkClass}>Product</NavLink>
                     <NavLink to='/contact' onClick={toggleMenu} className={navLinkClass}>Contact</NavLink>
-                    <NavLink to='/login'onClick={toggleMenu} className={navLinkClass}>Login</NavLink>
+                    {user ? <FaCircleUser /> : <NavLink to='/login' onClick={toggleMenu} className={navLinkClass}>Login</NavLink>}
                 </div>
             )}
         </div>

@@ -48,6 +48,7 @@ const AuthProvider = ({ children }) => {
 
     const value = {
         loading,
+        user,
         createUser,
         signInWithEmailandPassword,
         handleForgetPassword,
