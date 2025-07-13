@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import logo from '../assets/NavImages/logo.png';
 import { NavLink } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
@@ -7,7 +7,7 @@ import AuthContext from '../ContextApi/AuthContext';
 import { FaCircleUser } from 'react-icons/fa6';
 
 const Navbar = () => {
-    const { user, } = useContext(AuthContext)
+    // const { user, } = useContext(AuthContext)
     const [menuOpen, setMenuOpen] = useState(false);
     const [serviceDropDown, setServiceDropDown] = useState(false)
     const [productDropDown, setProductDropDown] = useState(false)
@@ -82,7 +82,7 @@ const Navbar = () => {
                     <div className='flex items-center'>
                         {/* {
                             user ? <FaCircleUser className='cursor-pointer text-xl' /> : ( */}
-                        <NavLink to="/login" className="bg-green-500 px-5 py-2 rounded text-white hover:bg-green-700 transition">
+                        <NavLink to="/login" onClick={() => window.scrollTo(0, 0)}className={navLinkClass}>
                             Login
                         </NavLink>
                         {/* )
