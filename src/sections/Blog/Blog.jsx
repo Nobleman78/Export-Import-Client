@@ -29,8 +29,8 @@ const Blog = () => {
         <div className='bg-gray-200  '>
             <main className='mt-20 py-20'>
                 <div className='flex flex-col text-center gap-3'>
-                    <h2 className='text-2xl font-semibold'>From the blog</h2>
-                    <p className='text-5xl max-w-md mx-auto font-bold'>Check Our Latest News & Articles</p>
+                    <h2 className='text-md lg:text-2xl font-semibold'>From the blog</h2>
+                    <p className='text-2xl lg:text-5xl max-w-5xl mx-auto font-bold'>Check Our Latest News & Articles</p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 lg:mx-20 mt-20 gap-8'>
                     {

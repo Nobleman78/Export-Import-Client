@@ -62,8 +62,8 @@ const FAQQuoteSection = () => {
             </div>
 
             <div className='bg-white p-8 sm:p-10 rounded-r-[1.9rem] flex flex-col justify-start'>
-                <p className='text-lg font-semibold text-gray-700'>Know the Price</p>
-                <h2 className='text-3xl sm:text-4xl font-bold mb-6 text-gray-900'>Get A Free Quote</h2>
+                <p className='text-md lg:text-lg font-semibold text-gray-700'>Know the Price</p>
+                <h2 className='text-2xl sm:text-4xl font-bold mb-6 text-gray-900'>Get A Free Quote</h2>
 
                 <form className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                     <input className='border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#2BA89C] focus:border-transparent transition duration-200' placeholder='Your Name' type='text' />

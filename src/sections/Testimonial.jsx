@@ -76,10 +76,11 @@ const Testimonial = () => {
         <div className='bg-gray-100'>
             <main className='mt-10 py-20 relative'>
                 <div className='text-center flex flex-col gap-3'>
-                    <h2 className='text-2xl'>Testimonials</h2>
-                    <p className='text-4xl sm:text-5xl max-w-xl mx-auto font-semibold'>
+                    <h2 className='text-md lg:text-2xl'>Testimonials</h2>
+                    <p className='w-[250px] lg:w-auto lg:max-w-xl mx-auto text-2xl lg:text-5xl font-semibold'>
                         What Our Customers Say About Import Export
                     </p>
+
                 </div>
 
                 <div className='px-6 sm:px-10 lg:px-20'>

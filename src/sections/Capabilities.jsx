@@ -34,14 +34,14 @@ const Capabilities = () => {
             {/* Top Section */}
             <main className='flex flex-col sm:flex-row sm:h-[500px]'>
                 <div className='w-full sm:w-1/2 bg-[#299792]'>
-                    <div className='text-4xl md:text-5xl lg:text-6xl font-bold px-5 py-10 sm:px-20 sm:py-20 text-white leading-tight'>
+                    <div className='text-xl md:text-5xl lg:text-6xl font-bold px-5 py-5 lg:py-10 sm:px-20 sm:py-20 text-white leading-tight'>
                         <h2>
                             Import Export <span className='inline-flex items-center gap-2'>Capabilities <MdOutlineDoubleArrow /></span>
                         </h2>
                     </div>
                 </div>
 
-                <div className='w-full sm:w-1/2 p-5 sm:px-20 sm:py-20 text-lg text-white sm:text-black'>
+                <div className='w-full sm:w-1/2 p-5 sm:px-20 sm:py-20 lg:text-lg text-white sm:text-black'>
                     <p className='text-justify' style={{ fontFamily: 'Roboto, sans-serif' }}>
                         "We offer end-to-end import and export solutions designed to streamline global trade. From sourcing and compliance to logistics and delivery, our expertise ensures your goods move efficiently and securely across borders."
                     </p>

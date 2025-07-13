@@ -24,8 +24,8 @@ const OurProcess = () => {
                 {/* Left Section */}
                 <section className='flex flex-col gap-10 w-full md:w-1/2'>
                     <div className='flex flex-col gap-3'>
-                        <h2 className='text-2xl font-semibold text-gray-700'>Our Process</h2>
-                        <p className='text-4xl md:text-5xl font-bold text-gray-900'>Working Process</p>
+                        <h2 className='text-md lg:text-2xl font-semibold text-gray-700'>Our Process</h2>
+                        <p className='text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900'>Working Process</p>
                     </div>
 
                     <p style={{fontFamily:'Poppins'}} className='text-lg text-gray-800 text-justify max-w-xl leading-relaxed font-sans'>

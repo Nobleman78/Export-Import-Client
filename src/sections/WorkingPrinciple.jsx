@@ -29,8 +29,8 @@ const WorkingPrinciple = () => {
                 </div>
                 <div className='w-full lg:w-1/2 sm:px-10 flex flex-col gap-8  '>
                     <div className='flex flex-col gap-3'>
-                        <h2 className='text-3xl'>How It Works</h2>
-                        <p className='text-5xl font-semibold'>We Provide Timely and Cost Effective.</p>
+                        <h2 className='text-md lg:text-3xl'>How It Works</h2>
+                        <p className='text-2xl lg:text-5xl font-semibold'>We Provide Timely and Cost Effective.</p>
                     </div>
                     <p style={{fontFamily:'roboto'}} className='text-xl'>Fusce lorem nunc, sollicitudin eget eaccumsan temp Curabitu quis ullamcorper neque. Donec pullmassad arcu necfa lectus rhon.</p>
                     {/* Middle Part */}

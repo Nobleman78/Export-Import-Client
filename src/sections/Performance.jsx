@@ -11,8 +11,8 @@ const Performance = () => {
                 </div>
                 <div className='sm:w-1/2 flex flex-col gap-10 lg:px-10'>
                     <div className='flex flex-col gap-5 text-center sm:text-start'>
-                        <h2 className='text-2xl sm:text-xl font-semibold'>Welcome to</h2>
-                        <h2 className=' text-3xl sm:text-5xl font-semibold'>World Class Logistic and Transpotation Service</h2>
+                        <h2 className='text-md sm:text-xl font-semibold'>Welcome to</h2>
+                        <h2 className='text-2xl sm:text-5xl font-semibold'>World Class Logistic and Transpotation Service</h2>
                     </div>
                     <p style={{ fontFamily: 'roboto' }} className='text-xl text-justify'>Fusce lorem nunc, sollicitudin eget eaccumsan temp Curabitu quis ullamcorper neque. Donec pullmassad arcu necfa lectus rhon. Praeset utvelinon augueining haselu ornare liberone acce volupat Nulla nvenenats enim, quis accumsan keque tortor eu felis.</p>
                     <div className='relative w-full'>
