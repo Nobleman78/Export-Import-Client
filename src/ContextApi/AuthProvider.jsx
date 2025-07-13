@@ -1,6 +1,6 @@
 import React, { Children, useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
-import { createUserWithEmailAndPassword, getRedirectResult, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signInWithRedirect, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { auth } from '../Utility/Firebase';
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
@@ -30,43 +30,21 @@ const AuthProvider = ({ children }) => {
 
     // Sign Out user
     const signOutUser = () => {
-        return signOut(auth)
+        return signOut(user)
     }
     const loginWithGoogle = () => {
         setLoading(true)
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+        return signInWithPopup(auth, provider)
 
-        if (isMobile) {
-            return signInWithRedirect(auth, provider)
-        } else {
-            return signInWithPopup(auth, provider)
-        }
     }
 
     // Deal with current user
-
-
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentuser => {
             setUser(currentuser)
-            setLoading(false)
         })
-
-        // Handle Google Redirect Login Result (Only triggers on mobile)
-        getRedirectResult(auth)
-            .then((result) => {
-                if (result?.user) {
-                    console.log("Redirect login success", result.user);
-                    setUser(result.user)
-                }
-            })
-            .catch((error) => {
-                console.error("Google redirect login error:", error);
-            });
-
         return () => unsubscribe()
     }, [])
-
 
     const value = {
         loading,
