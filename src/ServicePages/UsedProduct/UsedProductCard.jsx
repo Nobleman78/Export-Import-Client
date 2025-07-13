@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({ product }) => {
+const UsedProductCard = ({ product }) => {
     const navigate = useNavigate();
     return (
         <div>
             <div className='bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col overflow-hidden'>
-                <img src={product.img} alt={product.name} className='w-full h-52 object-contain bg-gray-100 p-4' loading='lazy' />
+                <img src={product.img} alt={product.name} className='w-full h-52 object-contain bg-gray-200 p-4' loading='lazy' />
                 <div className='p-5 flex flex-col gap-3 flex-1'>
                     <h2 className='text-lg font-semibold text-gray-800'>{product.name}</h2>
                     <p className='text-sm text-gray-500 font-medium'>{product.brand}</p>
@@ -32,4 +32,4 @@ const ProductCard = ({ product }) => {
     );
 };
 
-export default ProductCard;
+export default UsedProductCard;

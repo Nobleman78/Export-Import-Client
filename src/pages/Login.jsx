@@ -85,7 +85,7 @@ const Login = () => {
                                     <input type='checkbox' />
                                     <button>Remember Me</button>
                                 </div>
-                                <button onClick={ForgetPassword} className='text-blue-500 cursor-pointer text-sm hover:underline'>Forget Password</button>
+                                <button type='button' onClick={ForgetPassword} className='text-blue-500 cursor-pointer text-sm hover:underline'>Forget Password</button>
                             </div>
                             <button className='bg-teal-700 w-full py-2 text-white cursor-pointer rounded mb-5'>Sign In</button>
                         </form>
