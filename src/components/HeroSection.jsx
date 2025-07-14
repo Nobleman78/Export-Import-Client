@@ -39,8 +39,8 @@ const HeroSection = () => {
 
                 {/* Text part */}
                 <div className="absolute inset-0 z-10 flex items-center justify-start px-4 sm:px-10">
-                    <div className="text-white w-full max-w-2xl">
-                        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg leading-tight">
+                    <div className="text-white w-full  lg:max-w-2xl">
+                        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg leading-tight w-[250px] md:w-full">
                             Import Export Excellence <br className="hidden sm:block" /> Beyond Boundaries
                         </h2>
                         <button className="mt-4 px-6 py-3 sm:px-8 sm:py-4 bg-white hover:bg-[#15716c] hover:text-white font-semibold text-base sm:text-lg text-black rounded-full shadow-md transition-all duration-300">
