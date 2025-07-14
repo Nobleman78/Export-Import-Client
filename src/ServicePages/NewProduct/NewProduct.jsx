@@ -100,7 +100,7 @@ const NewProduct = () => {
                     transition={{ duration: 0.5 }}
                     className='flex items-center text-[#888] text-sm mb-8 font-medium'
                 >
-                    <Link to='/' className='flex items-center hover:text-[#b78d65] transition-colors'>
+                    <Link to='/' className='flex items-center hover:text-teal-500 transition-colors'>
                         <FiHome className='mr-2' />
                         Home
                     </Link>

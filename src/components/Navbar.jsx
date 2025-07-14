@@ -51,7 +51,7 @@ const Navbar = () => {
 
     const handleSelectService = (title) => {
         const encodedTitle = encodeURIComponent(title);
-        navigate(`/services/serviceDetail/${encodedTitle}`);
+        navigate(`/serviceDetail//${encodedTitle}`);
         setOpenSearchBar(false);
         setSearchTerm('');
         setFilteredServices([]);
@@ -62,16 +62,22 @@ const Navbar = () => {
         <div className='sticky top-0 w-full z-50 bg-white shadow'>
 
             {/* NAVIGATION */}
-            <nav className='flex flex-col sm:flex-row items-start sm:items-center justify-between px-4 sm:px-20 py-5 gap-4 sm:gap-0'>
+            <nav className='flex flex-col sm:flex-row items-start sm:items-center justify-between px-4 md:px-10 lg:px-20 py-5 gap-4 sm:gap-0'>
                 {/* Logo + Phone */}
-                <div className='flex flex-col sm:flex-row sm:items-center gap-5'>
-                    <img src={logo} className='cursor-pointer w-32 sm:w-auto' loading='lazy' alt='logo' />
-                    <div className='flex sm:hidden items-start gap-3'>
+                <div className='flex flex-col lg:flex-row lg:items-center gap-5 w-4/5  lg:w-auto'>
+                    <div className='flex items-center justify-between '>
+                        <img src={logo} className='cursor-pointer w-32 sm:w-auto' loading='lazy' alt='logo' />
+                        <NavLink className='flex items-center lg:hidden'>
+                            <FiSearch className='text-2xl' onClick={() => setOpenSearchBar(!openSearchBar)} />
+                        </NavLink>
+                    </div>
+                    <div className='flex lg:hidden items-start gap-3'>
                         <div>
                             <h2 className='text-[#1e928e] font-semibold'>Have Any Question</h2>
                             <p className='text-lg font-bold'>+8801534589756</p>
                         </div>
                     </div>
+
                 </div>
 
                 {/* Desktop Links */}
@@ -105,30 +111,30 @@ const Navbar = () => {
                     {/* Product Dropdown */}
                     <div className='relative' onMouseEnter={() => setProductDropDown(true)} onMouseLeave={() => setProductDropDown(false)}>
                         <div className='flex items-center gap-1 cursor-pointer' onClick={() => setProductDropDown(!productDropDown)}>
-                            <NavLink to='/product' className={navLinkClass}>Product</NavLink>
+                            <NavLink onClick={() => scrollTo(0, 0)} to='/product' className={navLinkClass}>Product</NavLink>
                             <IoIosArrowDown className={`mt-1 transform transition-transform duration-300 ${productDropDown ? 'rotate-180' : ''}`} />
                         </div>
                         {productDropDown && (
                             <div className='absolute top-full left-0 pt-7'>
                                 <div className='bg-white shadow-lg text-sm rounded-md py-2 px-4 z-50 border-t-4 border-teal-800 w-[200px] grid grid-cols-2 gap-3'>
-                                    <NavLink to='/product/newProduct' className='hover:text-[#1e928e]'>New Product</NavLink>
-                                    <NavLink to='/product/usedProduct' className='hover:text-[#1e928e]'>Used Product</NavLink>
+                                    <NavLink onClick={() => { setProductDropDown(false), scrollTo(0, 0) }} to='/product/newProduct' className='hover:text-[#1e928e]'>New Product</NavLink>
+                                    <NavLink onClick={() => { setProductDropDown(false), scrollTo(0, 0) }} to='/product/usedProduct' className='hover:text-[#1e928e]'>Used Product</NavLink>
                                 </div>
                             </div>
                         )}
                     </div>
 
-                    <NavLink to='/contact' className={navLinkClass}>Contact</NavLink>
-                    <NavLink to='/login' className={navLinkClass}>Login</NavLink>
-
+                    <NavLink onClick={() => scrollTo(0, 0)} to='/contact' className={navLinkClass}>Contact</NavLink>
+                    <NavLink onClick={() => scrollTo(0, 0)} to='/login' className={navLinkClass}>Login</NavLink>
                     {/* Search Icon */}
                     <NavLink className='flex items-center'>
-                        <FiSearch onClick={() => setOpenSearchBar(!openSearchBar)} />
+                        <FiSearch onClick={() => { setOpenSearchBar(!openSearchBar), scrollTo(0, 0) }} />
                     </NavLink>
                 </div>
 
+
                 {/* Desktop Phone */}
-                <div className='hidden sm:flex items-center gap-3 cursor-pointer'>
+                <div className='hidden lg:flex items-center gap-3 cursor-pointer'>
                     <div>
                         <h2 className='text-[#1e928e] font-semibold'>Have Any Question</h2>
                         <p className='text-lg font-bold'>+8801534589756</p>
@@ -152,6 +158,7 @@ const Navbar = () => {
                             onChange={(e) => setSearchTerm(e.target.value)}
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter') {
+                                    setMenuOpen(false)
                                     if (filteredServices.length > 0) {
                                         handleSelectService(filteredServices[0].title);
                                     } else {
@@ -200,7 +207,7 @@ const Navbar = () => {
                     <NavLink to='/product' onClick={toggleMenu} className={navLinkClass}>Product</NavLink>
                     <NavLink to='/contact' onClick={toggleMenu} className={navLinkClass}>Contact</NavLink>
                     <NavLink to='/login' onClick={toggleMenu} className={navLinkClass}>Login</NavLink>
-                    <NavLink className='flex items-center'><FiSearch onClick={() => setOpenSearchBar(!openSearchBar)} /></NavLink>
+
                 </div>
             )}
         </div>

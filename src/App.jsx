@@ -35,7 +35,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/services' element={<Service />} />
-          <Route path='/services/serviceDetail/:title' element={<ServiceDetail />} />
+          <Route path='/serviceDetail//:title' element={<ServiceDetail />} />
           <Route path='/services/export' element={<Export />} />
           <Route path='/services/import' element={<Import />} />
           <Route path='/services/request' element={<ExportServiceRequest />} />

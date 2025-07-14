@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Import = () => {
     const navigate = useNavigate()
     return (
-        <div className="max-w-8xl mx-auto px-20 py-12" style={{ fontFamily: 'roboto' }}>
+        <div className="max-w-8xl mx-auto px-5 lg:px-20 py-12" style={{ fontFamily: 'roboto' }}>
             <Helmet>
                 <title>Import | Eximport</title>
             </Helmet>
