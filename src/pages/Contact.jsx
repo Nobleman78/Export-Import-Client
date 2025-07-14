@@ -13,6 +13,7 @@ const Contact = () => {
         const email = form.email.value;
         const number = form.phonenumber.value;
         const message = form.message.value;
+        form.reset()
         console.log(FirstName, lastName, email, number, message)
     }
     return (
@@ -36,28 +37,28 @@ const Contact = () => {
                             <div className='flex flex-col md:flex-row mt-10 justify-between items-center gap-4'>
                                 <div className='w-full md:w-1/2 flex flex-col' >
                                     <label htmlFor="">First Name</label>
-                                    <input name='firstname' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="text" placeholder='Enter Your First Name' />
+                                    <input required name='firstname' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="text" placeholder='Enter Your First Name' />
                                 </div>
                                 <div className='w-full md:w-1/2 flex flex-col' >
                                     <label htmlFor="">Last Name</label>
-                                    <input name='lastname' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="text" placeholder='Enter Your Last Name' />
+                                    <input required name='lastname' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="text" placeholder='Enter Your Last Name' />
                                 </div>
                             </div>
                             <div className='flex flex-col md:flex-row justify-between mt-5 md:mt-0 items-center gap-4'>
                                 <div className='w-full md:w-1/2 flex flex-col'>
                                     <label htmlFor="" >Email</label>
-                                    <input name='email' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="number" placeholder='Enter Your Email' />
+                                    <input required name='email' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="email" placeholder='Enter Your Email' />
                                 </div>
                                 <div className='w-full md:w-1/2 flex flex-col'>
                                     <label htmlFor="">Phone Number</label>
-                                    <input name='phonenumber' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="number" placeholder='Enter Your Phone Number' />
+                                    <input required name='phonenumber' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="number" placeholder='Enter Your Phone Number' />
                                 </div>
                             </div>
                             <div className='flex flex-col mt-5' >
                                 <label htmlFor="">Message</label>
-                                <input name='message' type="text" className='py-5 px-4 border outline-none shadow-none mt-2 rounded-lg bg-white text-black' />
+                                <input required name='message' type="text" className='py-5 px-4 border outline-none shadow-none mt-2 rounded-lg bg-white text-black' />
                             </div>
-                            <button className='text-lg px-4 py-2 cursor-pointer bg-white text-black mt-4 rounded w-50' data-aos="fade-up">Submit</button>
+                            <button className='text-lg px-4 py-2 cursor-pointer bg-white hover:text-teal-700 text-black mt-4 rounded w-50' data-aos="fade-up">Submit</button>
                         </form>
                     </div>
 

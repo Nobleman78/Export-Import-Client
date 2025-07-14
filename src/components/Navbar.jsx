@@ -125,7 +125,7 @@ const Navbar = () => {
                     </div>
 
                     <NavLink onClick={() => scrollTo(0, 0)} to='/contact' className={navLinkClass}>Contact</NavLink>
-                    <NavLink onClick={() => scrollTo(0, 0)} to='/login' className={navLinkClass}>Login</NavLink>
+                    {/* <NavLink onClick={() => scrollTo(0, 0)} to='/login' className={navLinkClass}>Login</NavLink> */}
                     {/* Search Icon */}
                     <NavLink className='flex items-center'>
                         <FiSearch onClick={() => { setOpenSearchBar(!openSearchBar), scrollTo(0, 0) }} />

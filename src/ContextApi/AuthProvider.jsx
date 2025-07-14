@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { auth } from '../Utility/Firebase';
-import Products from '../../public/Products';
-import Services from '../../public/Services';
+import Products from '../data/Products';
+import Services from '../data/Services';
+
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -71,7 +72,7 @@ const AuthProvider = ({ children }) => {
         loginWithGoogle,
         products,
         services,
-        searchServices // ✅ exposed
+        searchServices 
     };
 
     return (
