@@ -1,0 +1,81 @@
+const services = [
+    {
+        id: 1,
+        title: "Land Freight",
+        description: "Reliable ground transportation for cargo across domestic and international borders.",
+        image: "https://bafcointl.com/wp-content/uploads/2023/08/Land-Freight.jpeg",
+    },
+    {
+        id: 2,
+        title: "Air Freight",
+        description: "Fast and secure air cargo services for high-priority and time-sensitive shipments.",
+        image: "https://www.inboundlogistics.com/wp-content/uploads/air-logistics.jpg",
+    },
+    {
+        id: 3,
+        title: "Ocean Freight",
+        description: "Cost-effective sea freight solutions for bulk and containerized cargo worldwide.",
+        image: "https://media.istockphoto.com/id/1317779371/photo/3d-cargo-container-ship-in-sea.jpg?s=612x612&w=0&k=20&c=75y3BSw2-IcLKAe6r-zUgAuT4C3oXcfgEw4hpKs1Im4=",
+    },
+    {
+        id: 4,
+        title: "Drugs and Pharmaceuticals",
+        description: "Temperature-controlled and compliant shipping for pharmaceutical and medical goods.",
+        image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RHJ1Z3MlMjBhbmQlMjBQaGFybWFjZXV0aWNhbHN8ZW58MHx8MHx8fDA%3D",
+    },
+    {
+        id: 5,
+        title: "Engineering Goods",
+        description: "Exporting machinery, spare parts, and heavy engineering goods with safety and precision.",
+        image: "https://images.unsplash.com/photo-1615746363486-92cd8c5e0a90?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8RW5naW5lZXJpbmclMjBHb29kc3xlbnwwfHwwfHx8MA%3D%3D",
+    },
+    {
+        id: 6,
+        title: "Electronic Goods",
+        description: "Secure handling and delivery of sensitive electronic devices and components.",
+        image: "https://images.unsplash.com/photo-1706006996181-97c3feac30d0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEVsZWN0cm9uaWMlMjBHb29kc3xlbnwwfHwwfHx8MA%3D%3D",
+    },
+    {
+        id: 7,
+        title: "Agricultural Goods",
+        description: "Export of grains, spices, fruits, and other agri-products with freshness preserved.",
+        image: "https://plus.unsplash.com/premium_photo-1686529896385-8a8d581d0225?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8QWdyaWN1bHR1cmFsJTIwR29vZHN8ZW58MHx8MHx8fDA%3D",
+    },
+    {
+        id: 8,
+        title: "Customs Clearance",
+        description: "Expert handling of customs documentation, duties, and compliance for smooth clearance.",
+        image: "https://images.unsplash.com/photo-1580795478762-1f6b61f2fae7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q3VzdG9tcyUyMENsZWFyYW5jZXxlbnwwfHwwfHx8MA%3D%3D",
+    },
+    {
+        id: 9,
+        title: "Warehousing & Storage",
+        description: "Secure, temperature-controlled, and scalable storage solutions for goods.",
+        image: "https://plus.unsplash.com/premium_photo-1682146914018-59bf44f32fb3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8V2FyZWhvdXNpbmclMjAlMjYlMjBTdG9yYWdlfGVufDB8fDB8fHww",
+    },
+    {
+        id: 10,
+        title: "Door-to-Door Delivery",
+        description: "Comprehensive logistics from sender’s location to final destination worldwide.",
+        image: "https://img.freepik.com/free-photo/parcel-delivery-man-handling-box-customer_53876-127805.jpg",
+    },
+    {
+        id: 11,
+        title: "Pickup",
+        description: "Professional consultation for optimizing supply chain and shipping strategies.",
+        image: "https://www.spinny.com/blog/wp-content/uploads/2024/07/Bolero-Pik-Up.webp",
+    },
+    {
+        id: 11,
+        title: "Ven",
+        description: "Professional consultation for optimizing supply chain and shipping strategies.",
+        image: "https://media.istockphoto.com/id/2159731238/photo/couple-doing-eco-tourism-in-organic-farm.jpg?s=612x612&w=0&k=20&c=fhUEfOfDd0yaeV7HicU-eaohzVltAwgPLClNc08K4e0=",
+    },
+    {
+        id: 11,
+        title: "Truck",
+        description: "Professional consultation for optimizing supply chain and shipping strategies.",
+        image: "https://plus.unsplash.com/premium_photo-1664695368767-c42483a0bda1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dHJ1Y2t8ZW58MHx8MHx8fDA%3D",
+    }
+];
+export default services

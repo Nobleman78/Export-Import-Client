@@ -1,56 +1,65 @@
-import React, { Children, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { auth } from '../Utility/Firebase';
 import Products from '../../public/Products';
+import Services from '../../public/Services';
+
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(false)
-    const [products, setProducts] = useState([])
-    const provider = new GoogleAuthProvider()
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [products, setProducts] = useState([]);
+    const [services, setServices] = useState([]);
+    const provider = new GoogleAuthProvider();
 
     useEffect(() => {
-        setProducts(Products)
-    }, [])
+        setProducts(Products);
+    }, []);
 
-    // Create User Using Firebase
+    useEffect(() => {
+        setServices(Services);
+    }, []);
+
+    //  Search services by title
+    const searchServices = (term) => {
+        if (!term || term.trim() === '') return [];
+        return services.filter(service =>
+            service.title.toLowerCase().includes(term.toLowerCase())
+        );
+    };
+
     const createUser = (email, password) => {
-        setLoading(true)
-        return createUserWithEmailAndPassword(auth, email, password)
-    }
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
+    };
 
-    // Sign in with user email and password 
     const signInWithEmailandPassword = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
-    }
+        return signInWithEmailAndPassword(auth, email, password);
+    };
 
-    // Handle Forget Password 
     const handleForgetPassword = (email) => {
         if (!email) {
-            alert('Please Provide a valid email address')
+            alert('Please Provide a valid email address');
+        } else {
+            return sendPasswordResetEmail(auth, email);
         }
-        else {
-            return sendPasswordResetEmail(auth, email)
-        }
-    }
+    };
 
-    // Sign Out user
     const signOutUser = () => {
-        return signOut(user)
-    }
+        return signOut(auth);
+    };
+
     const loginWithGoogle = () => {
-        setLoading(true)
-        return signInWithPopup(auth, provider)
+        setLoading(true);
+        return signInWithPopup(auth, provider);
+    };
 
-    }
-
-    // Deal with current user
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentuser => {
-            setUser(currentuser)
-        })
-        return () => unsubscribe()
-    }, [])
+            setUser(currentuser);
+        });
+        return () => unsubscribe();
+    }, []);
 
     const value = {
         loading,
@@ -60,8 +69,11 @@ const AuthProvider = ({ children }) => {
         handleForgetPassword,
         signOutUser,
         loginWithGoogle,
-        products
-    }
+        products,
+        services,
+        searchServices // ✅ exposed
+    };
+
     return (
         <AuthContext.Provider value={value}>
             {children}
