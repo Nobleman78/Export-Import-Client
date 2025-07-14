@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { auth } from '../Utility/Firebase';
-import Products from '../data/products';
-import Services from '../data/services';
-
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -14,11 +11,15 @@ const AuthProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
 
     useEffect(() => {
-        setProducts(Products);
+        fetch('/Data/Products.json')
+            .then(res => res.json())
+            .then(data => setProducts(data))
     }, []);
 
     useEffect(() => {
-        setServices(Services);
+        fetch('/Data/Services.json')
+            .then(res => res.json())
+            .then(data => setServices(data))
     }, []);
 
     //  Search services by title
@@ -72,7 +73,7 @@ const AuthProvider = ({ children }) => {
         loginWithGoogle,
         products,
         services,
-        searchServices 
+        searchServices
     };
 
     return (
