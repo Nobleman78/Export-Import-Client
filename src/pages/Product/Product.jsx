@@ -10,43 +10,74 @@ const Product = () => {
     const [selectedBrand, setSelectedBrand] = useState('');
     const [priceRange, setPriceRange] = useState({ min: 0, max: 2000 });
     const [showFilter, setShowFilter] = useState(false);
+    const [sortOption, setSortOption] = useState('');
+    const [itemsToShow, setItemsToShow] = useState(20);
 
-    const uniqueBrands = useMemo(() => {
-        const brands = products.map(p => p.brand);
-        return [...new Set(brands)];
-    }, [products]);
+    // Pagination state
+    const [currentPage, setCurrentPage] = useState(1);
 
-    useEffect(() => {
+    const uniqueBrands = useMemo(() => [...new Set(products.map(p => p.brand))], [products]);
+
+    // Filter and sort products (without slicing)
+    const filteredSortedProducts = useMemo(() => {
         let result = [...products];
+
         if (selectedQuality) result = result.filter(p => p.quality === selectedQuality);
         if (selectedBrand) result = result.filter(p => p.brand === selectedBrand);
         result = result.filter(p => p.price >= priceRange.min && p.price <= priceRange.max);
-        setFilteredProducts(result);
-    }, [products, selectedQuality, selectedBrand, priceRange]);
+
+        if (sortOption === 'lowToHigh') {
+            result.sort((a, b) => a.price - b.price);
+        } else if (sortOption === 'highToLow') {
+            result.sort((a, b) => b.price - a.price);
+        }
+
+        return result;
+    }, [products, selectedQuality, selectedBrand, priceRange, sortOption]);
+
+    // Calculate total pages
+    const totalPages = Math.ceil(filteredSortedProducts.length / itemsToShow);
+
+    // Get products for current page
+    useEffect(() => {
+        const startIndex = (currentPage - 1) * itemsToShow;
+        const endIndex = startIndex + itemsToShow;
+        setFilteredProducts(filteredSortedProducts.slice(startIndex, endIndex));
+    }, [filteredSortedProducts, currentPage, itemsToShow]);
+
+    // Reset to page 1 if filters, sorting, or itemsToShow changes
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selectedQuality, selectedBrand, priceRange, sortOption, itemsToShow]);
+
+    // Pagination controls
+    const handlePageChange = (page) => {
+        if (page < 1 || page > totalPages) return;
+        setCurrentPage(page);
+    };
 
     return (
-        <div className='bg-gradient-to-br from-[#f8fafc] to-[#f1f5f9] min-h-screen py-12 px-6 lg:px-20'>
+        <div className='bg-[#f5f6fa] min-h-screen py-8 px-4 lg:px-20'>
             <Helmet><title>Products | Eximport</title></Helmet>
 
             <div className='max-w-7xl mx-auto'>
-
                 {/* Mobile Filter Button */}
-                <div className='lg:hidden mb-6'>
+                <div className='lg:hidden mb-6 text-center'>
                     <button
                         onClick={() => setShowFilter(prev => !prev)}
-                        className='bg-[#1e928e] text-white px-4 py-2 rounded-lg font-semibold'>
+                        className='bg-[#1e928e] hover:bg-[#176b68] transition-all duration-300 text-white px-6 py-2.5 rounded-xl shadow font-semibold text-lg'>
                         {showFilter ? 'Hide Filters' : 'Show Filters'}
                     </button>
                 </div>
 
-                <div className='flex flex-col lg:flex-row gap-10'>
-                    {/* Filters */}
-                    <aside className={`bg-white p-6 rounded-xl shadow-md w-full lg:w-1/4 h-100 ${showFilter ? 'block' : 'hidden'} lg:block`}>
-                        <h2 className='text-xl font-bold text-[#1e928e] mb-4'>Filter Products</h2>
+                <div className='flex flex-col lg:flex-row gap-6'>
+                    {/* Filter Sidebar */}
+                    <aside className={`bg-white border border-gray-200 rounded-xl h-[500px] shadow-sm px-6 py-6 w-full lg:w-1/4 space-y-6 ${showFilter ? 'block' : 'hidden'} lg:block`}>
+                        <h2 className='text-xl font-bold text-[#1e928e]'>Filter Products</h2>
 
                         {/* Quality */}
-                        <div className='mb-4'>
-                            <label className='block text-sm font-medium text-gray-700 mb-1'>Quality</label>
+                        <div>
+                            <label className='block text-sm font-medium text-gray-700 mb-2'>Quality</label>
                             <select
                                 value={selectedQuality}
                                 onChange={e => setSelectedQuality(e.target.value)}
@@ -58,8 +89,8 @@ const Product = () => {
                         </div>
 
                         {/* Brand */}
-                        <div className='mb-4'>
-                            <label className='block text-sm font-medium text-gray-700 mb-1'>Brand</label>
+                        <div>
+                            <label className='block text-sm font-medium text-gray-700 mb-2'>Brand</label>
                             <select
                                 value={selectedBrand}
                                 onChange={e => setSelectedBrand(e.target.value)}
@@ -71,21 +102,22 @@ const Product = () => {
                             </select>
                         </div>
 
-                        {/* Price */}
-                        <div className='mb-4'>
-                            <label className='block text-sm font-medium text-gray-700 mb-1'>Price Range</label>
+                        {/* Price Range */}
+                        <div>
+                            <label className='block text-sm font-medium text-gray-700 mb-2'>Price Range</label>
                             <div className='flex gap-2'>
-                                <input type='number'
+                                <input
+                                    type='number'
                                     value={priceRange.min}
                                     onChange={e => setPriceRange(prev => ({ ...prev, min: +e.target.value }))}
                                     placeholder='Min'
-                                    className='w-1/2 p-2 border rounded-md'/>
-                                <input type='number'
+                                    className='w-1/2 p-2 border rounded-md' />
+                                <input
+                                    type='number'
                                     value={priceRange.max}
                                     onChange={e => setPriceRange(prev => ({ ...prev, max: +e.target.value }))}
                                     placeholder='Max'
-                                    className='w-1/2 p-2 border rounded-md'
-                                />
+                                    className='w-1/2 p-2 border rounded-md' />
                             </div>
                         </div>
 
@@ -96,25 +128,79 @@ const Product = () => {
                                 setSelectedBrand('');
                                 setPriceRange({ min: 0, max: 2000 });
                             }}
-                            className='w-full mt-4 bg-teal-500 hover:bg-teal-700 text-white py-2 rounded-lg font-medium' >
+                            className='w-full cursor-pointer mt-4 bg-teal-500 hover:bg-teal-700 text-white py-2 rounded-lg font-medium transition'>
                             Reset Filters
                         </button>
                     </aside>
 
-                    {/* Products */}
+                    {/* Product Listing */}
                     <main className='w-full lg:w-3/4'>
-                        <h1 className='text-3xl font-bold text-[#1e928e] mb-8'>All Products</h1>
-                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
+                        {/* Sort/Show Top Bar */}
+                        <div className='flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 bg-white py-3 px-4 rounded'>
+                            <h1 className='text-2xl font-bold text-[#1e928e]'>All Products</h1>
+                            <div className='flex gap-4'>
+                                <select
+                                    value={itemsToShow}
+                                    onChange={(e) => setItemsToShow(+e.target.value)}
+                                    className='border rounded px-4 py-1 text-sm'>
+                                    <option value={10}>Show: 10</option>
+                                    <option value={20}>Show: 20</option>
+                                    <option value={30}>Show: 30</option>
+                                </select>
+                                <select
+                                    value={sortOption}
+                                    onChange={(e) => setSortOption(e.target.value)}
+                                    className='border rounded px-4 py-1 text-sm'>
+                                    <option value=''>Sort By</option>
+                                    <option value='lowToHigh'>Price: Low to High</option>
+                                    <option value='highToLow'>Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                             {filteredProducts.length > 0 ? (
                                 filteredProducts.map(product => (
                                     <ProductCard key={product.id} product={product} />
                                 ))
                             ) : (
-                                <p className='text-center col-span-full text-gray-500'>
-                                    No products match the selected filters.
+                                <p className='text-center col-span-full text-gray-500 text-lg'>
+                                    No products found.
                                 </p>
                             )}
                         </div>
+
+                        {/* Pagination */}
+                        {totalPages > 1 && (
+                            <div className='flex justify-center mt-8 space-x-2'>
+                                <button
+                                    onClick={() => handlePageChange(currentPage - 1)}
+                                    disabled={currentPage === 1}
+                                    className='px-3 py-1 border rounded disabled:opacity-50'>
+                                    Prev
+                                </button>
+
+                                {/* Show page numbers */}
+                                {[...Array(totalPages)].map((_, idx) => {
+                                    const page = idx + 1;
+                                    return (
+                                        <button
+                                            key={page}
+                                            onClick={() => handlePageChange(page)}
+                                            className={`px-3 py-1 border rounded ${page === currentPage ? 'bg-[#1e928e] text-white' : 'hover:bg-gray-200'}`}>
+                                            {page}
+                                        </button>
+                                    );
+                                })}
+
+                                <button
+                                    onClick={() => handlePageChange(currentPage + 1)}
+                                    disabled={currentPage === totalPages}
+                                    className='px-3 py-1 border rounded disabled:opacity-50'>
+                                    Next
+                                </button>
+                            </div>
+                        )}
                     </main>
                 </div>
             </div>

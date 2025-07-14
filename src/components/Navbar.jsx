@@ -46,7 +46,7 @@ const Navbar = () => {
                         {/* <img src={phoneIcon} className='w-10 h-10 object-cover' loading='lazy' alt='phone' /> */}
                         <div>
                             <h2 style={{ fontFamily: 'Roboto' }} className='text-[#1e928e] font-semibold'>Have Any Question</h2>
-                            <p className='text-lg font-bold'>123 456 7890</p>
+                            <p className='text-lg font-bold'>+8801534589756</p>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ const Navbar = () => {
                         {/* Service Dropdown */}
                         {serviceDropDown && (
                             <div className='absolute left-0 top-full pt-7'>
-                                <div className='w-[500px] bg-white shadow-lg text-sm rounded-md py-2 px-4 z-50 border-t-4 border-teal-800 grid grid-cols-3 gap-5'>
+                                <div className='w-[500px] bg-white shadow-lg text-sm rounded-md py-2 px-4 z-50 border-t-4 border-teal-800 grid grid-cols-3 gap-2'>
                                     <NavLink onClick={() => setServiceDropDown(false)} to='/services/export' className='block hover:text-[#1e928e] text-black py-1'>Export</NavLink>
                                     <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='block hover:text-[#1e928e] text-black py-1'>Import</NavLink>
                                     <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='block hover:text-[#1e928e] text-black py-1'>Engineering Goods</NavLink>
@@ -74,7 +74,8 @@ const Navbar = () => {
                                     <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='block hover:text-[#1e928e] text-black py-1'>Agriculture Goods</NavLink>
                                     <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='block hover:text-[#1e928e] text-black py-1'>Plastic and Linoleum</NavLink>
                                     <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='block hover:text-[#1e928e] text-black py-1'>Fruits and Vegetables</NavLink>
-                                    
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/blogs' className='block hover:text-[#1e928e] text-black py-1'>Blogs and News</NavLink>
+
                                 </div>
                             </div>
                         )}
@@ -124,7 +125,7 @@ const Navbar = () => {
                 <div className='hidden sm:flex items-center gap-3 cursor-pointer'>
                     <div>
                         <h2 style={{ fontFamily: 'Roboto' }} className='text-[#1e928e] font-semibold'>Have Any Question</h2>
-                        <p className='text-lg font-bold'>123 456 7890</p>
+                        <p className='text-lg font-bold'>+8801534589756</p>
                     </div>
                 </div>
 
@@ -137,7 +138,7 @@ const Navbar = () => {
             {/* Mobile Navigation */}
             {menuOpen && (
                 <div className='lg:hidden bg-gray-200 py-5 flex flex-col gap-4 px-6 pb-4 text-base font-medium'>
-                    <NavLink to='/' onClick={() => { window.scrollTo(0, 0), toggleMenu }} className={navLinkClass}>Home</NavLink>
+                    <NavLink to='/' onClick={() => { window.scrollTo(0, 0), toggleMenu() }} className={navLinkClass}>Home</NavLink>
                     <NavLink to='/about' onClick={toggleMenu} className={navLinkClass}>About</NavLink>
                     <NavLink to='/services' onClick={toggleMenu} className={navLinkClass}>Services</NavLink>
                     <NavLink to='/product' onClick={toggleMenu} className={navLinkClass}>Product</NavLink>

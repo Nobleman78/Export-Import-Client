@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const UsedProductCard = ({ product }) => {
@@ -24,7 +23,7 @@ const UsedProductCard = ({ product }) => {
                         </span>
                     </div>
                     <button onClick={() => { navigate('/contact'), scrollTo(0, 0) }} className='mt-4 cursor-pointer bg-[#1e928e] hover:bg-[#15726f] text-white py-2 rounded-lg font-medium transition'>
-                        Know More
+                        See More
                     </button>
                 </div>
             </div>

@@ -70,7 +70,7 @@ const About = () => {
             <main>
                 <div className='relative'>
                     <img src={aboutImage}
-                        sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px" loading='lazy' alt='about-image' className='w-full ' />
+                        sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px" loading='lazy' alt='about-image' className='w-full h-[200px] lg:h-full' />
                     <h2 className='absolute inset-0 flex items-center justify-center text-white text-3xl sm:text-4xl md:text-5xl font-bold  bg-opacity-40'>
                         About Us
                     </h2>

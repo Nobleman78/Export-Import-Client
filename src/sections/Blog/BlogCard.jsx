@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BlogCard = React.memo(({ blog: { image, title, des, published_Date } }) => {
     return (
@@ -8,9 +9,10 @@ const BlogCard = React.memo(({ blog: { image, title, des, published_Date } }) =>
                 <h2 className='text-2xl cursor-pointer hover:text-teal-700'>{title}</h2>
                 <span className='text-gray-800'>Published Date: {published_Date}</span>
                 <p className='text-lg font-poppins line-clamp-3'>{des}</p>
-                <button className='bg-teal-400 py-3 text-white rounded-3xl cursor-pointer hover:bg-teal-700 text-lg'>
+                <Link to='/services/blogs'><button className='bg-teal-400 py-3 text-white rounded-3xl cursor-pointer hover:bg-teal-700 text-lg'>
                     Read More+
                 </button>
+                </Link>
             </div>
         </div>
     );

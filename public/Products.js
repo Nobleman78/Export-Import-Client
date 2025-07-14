@@ -2,7 +2,7 @@ const products = [
     {
         'id': 1,
         'name': 'Dell XPS 13',
-        'img': 'https://m.media-amazon.com/images/I/71oKS0ZTTCL._AC_UY218_.jpg',
+        'img': 'https://media.istockphoto.com/id/1188018336/photo/half-closed-laptop-on-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=hma7cisEDw0d51uLbuBzwhpLqAVISGXnN526AxRElig=',
         'price': 1200,
         'brand': 'Dell',
         'quality': 'New',
