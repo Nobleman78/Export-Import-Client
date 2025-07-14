@@ -157,7 +157,7 @@ const products = [
     {
         id: 7,
         name: "Corsair Vengeance LPX RAM",
-        img: "https://m.media-amazon.com/images/I/61wCOVcyvFL._AC_UY218_.jpghttps://example.com/ram1.jpg",
+        img: "https://m.media-amazon.com/images/I/61wCOVcyvFL._AC_UY218_.jpg",
         price: 90,
         brand: "Corsair",
         quality: "New",

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { auth } from '../Utility/Firebase';
-import Products from '../data/Products';
-import Services from '../data/Services';
+import Products from '../data/products';
+import Services from '../data/services';
 
 
 const AuthProvider = ({ children }) => {
