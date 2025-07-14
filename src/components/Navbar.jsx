@@ -88,15 +88,15 @@ const Navbar = () => {
                         {serviceDropDown && (
                             <div className='absolute left-0 top-full pt-7'>
                                 <div className='w-[500px] bg-white shadow-lg text-sm rounded-md py-2 px-4 z-50 border-t-4 border-teal-800 grid grid-cols-3 gap-2'>
-                                    <NavLink to='/services/export' className='hover:text-[#1e928e]'>Export</NavLink>
-                                    <NavLink to='/services/import' className='hover:text-[#1e928e]'>Import</NavLink>
-                                    <NavLink to='/services/import' className='hover:text-[#1e928e]'>Engineering Goods</NavLink>
-                                    <NavLink to='/services/import' className='hover:text-[#1e928e]'>Electronics Goods</NavLink>
-                                    <NavLink to='/services/import' className='hover:text-[#1e928e]'>Drugs and Pharmaseuticals</NavLink>
-                                    <NavLink to='/services/import' className='hover:text-[#1e928e]'>Agriculture Goods</NavLink>
-                                    <NavLink to='/services/import' className='hover:text-[#1e928e]'>Plastic and Linoleum</NavLink>
-                                    <NavLink to='/services/import' className='hover:text-[#1e928e]'>Fruits and Vegetables</NavLink>
-                                    <NavLink to='/services/blogs' className='hover:text-[#1e928e]'>Blogs and News</NavLink>
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/export' className='hover:text-[#1e928e]'>Export</NavLink>
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='hover:text-[#1e928e]'>Import</NavLink>
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='hover:text-[#1e928e]'>Engineering Goods</NavLink>
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='hover:text-[#1e928e]'>Electronics Goods</NavLink>
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='hover:text-[#1e928e]'>Drugs and Pharmaseuticals</NavLink>
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='hover:text-[#1e928e]'>Agriculture Goods</NavLink>
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='hover:text-[#1e928e]'>Plastic and Linoleum</NavLink>
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/import' className='hover:text-[#1e928e]'>Fruits and Vegetables</NavLink>
+                                    <NavLink onClick={() => setServiceDropDown(false)} to='/services/blogs' className='hover:text-[#1e928e]'>Blogs and News</NavLink>
                                 </div>
                             </div>
                         )}
@@ -200,6 +200,7 @@ const Navbar = () => {
                     <NavLink to='/product' onClick={toggleMenu} className={navLinkClass}>Product</NavLink>
                     <NavLink to='/contact' onClick={toggleMenu} className={navLinkClass}>Contact</NavLink>
                     <NavLink to='/login' onClick={toggleMenu} className={navLinkClass}>Login</NavLink>
+                    <NavLink className='flex items-center'><FiSearch onClick={() => setOpenSearchBar(!openSearchBar)} /></NavLink>
                 </div>
             )}
         </div>
