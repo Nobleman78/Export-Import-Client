@@ -7,23 +7,38 @@ const Footer = () => {
     const footerLinks = [
         {
             title: 'Services',
-            items: ['Import Solutions', 'Export Solutions', 'Customs Brokerage', 'Freight Forwarding'],
+            items: [
+                { label: 'Import Solutions', to: '/services/import' },
+                { label: 'Export Solutions', to: '/services/export' },
+                { label: 'Customs Brokerage', to: '/services/customs' },
+                { label: 'Freight Forwarding', to: '/services/freight' },
+            ],
         },
         {
             title: 'Company',
-            items: ['About Us', 'Careers', 'Press', 'Blog'],
+            items: [
+                { label: 'About Us', to: '/about' },
+                { label: 'Careers', to: '/careers' },
+                { label: 'Press', to: '/press' },
+                { label: 'Blog', to: '/blog' },
+            ],
         },
         {
             title: 'Contact Us',
             items: [
-                'Phone: +1 234 567 890',
-                'Email: info@company.com',
-                'Address: 123 Export St, Business City',
+                { label: 'Phone: 8801401791719', isText: true },
+                { label: 'Email: info@company.com', isText: true },
+                { label: 'Address: 1301/1 East Monipur, Begum Rokeya Sarani, Mirpur-10, Dhaka-1216', isText: true },
             ],
         },
         {
             title: 'Connect With Us',
-            items: ['Facebook', 'Twitter', 'LinkedIn', 'Instagram'],
+            items: [
+                { label: 'Facebook', href: 'https://facebook.com/yourpage' },
+                { label: 'Twitter', href: 'https://twitter.com/yourpage' },
+                { label: 'LinkedIn', href: 'https://linkedin.com/company/yourpage' },
+                { label: 'Instagram', href: 'https://instagram.com/yourpage' },
+            ],
         }
     ];
 
@@ -49,7 +64,19 @@ const Footer = () => {
                                 {section.items.map((item, i) => (
                                     <li key={i} className='flex items-center gap-2 hover:translate-x-2 transition-transform duration-300 cursor-pointer'>
                                         <MdOutlineDoubleArrow className='text-teal-600' />
-                                        <span>{item}</span>
+                                        {item.to ? (
+                                            <Link to={item.to} className="hover:underline">
+                                                {item.label}
+                                            </Link>
+                                        ) : item.href ? (
+                                            <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                                {item.label}
+                                            </a>
+                                        ) : item.isText ? (
+                                            <span>{item.label}</span>
+                                        ) : (
+                                            <span>{item.label}</span>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
