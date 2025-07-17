@@ -87,7 +87,7 @@ const Login = () => {
                         {/* <div  className='flex items-center justify-center gap-3 bg-gray-100 py-2 rounded  mb-5 cursor-pointer'>
                             <FcGoogle className='text-xl' /><button >Login with Google</button>
                         </div> */}
-                        <span className='flex justify-center'>Or</span>
+                      `  {/* <span className='flex justify-center'>Or</span>` */}
 
                         <form onSubmit={handleLogin}>
                             {/* Login With User name/email and password */}
