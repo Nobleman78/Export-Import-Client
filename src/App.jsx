@@ -10,6 +10,16 @@ import DelayedFallback from './Utility/DelayedFallback';
 import CallButton from './Utility/Call';
 import GoToTop from './Utility/GoToTop';
 import TalkToUs from './Utility/TalkToUs';
+import AdminHome from './pages/Dashboard/AdminHome';
+import AddProducts from './pages/Dashboard/AddProducts';
+import AddServices from './pages/Dashboard/AddServices';
+import ManagedProducts from './pages/Dashboard/ManagedProducts';
+import ManagedServices from './pages/Dashboard/ManagedServices';
+import UpdateProduct from './pages/Dashboard/UpdateProduct';
+import UpdateService from './pages/Dashboard/UpdateService';
+import ProductDescription from './pages/Product/ProductDescription';
+import Users from './pages/Dashboard/Users/Users';
+
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -23,6 +33,7 @@ const Import = lazy(() => import('./ServicePages/Import'));
 const NewProduct = lazy(() => import('./ServicePages/NewProduct/NewProduct'));
 const UsedProduct = lazy(() => import('./ServicePages/UsedProduct/UsedProduct'));
 const ExportServiceRequest = lazy(() => import('./ServicePages/ServiceRequest/ServiceRequest'))
+const Dashboard = lazy(() => import('./pages/Dashboard/Dashboard'))
 
 function App() {
   return (
@@ -35,18 +46,29 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/services' element={<Service />} />
-          <Route path='/serviceDetail//:title' element={<ServiceDetail />} />
+          <Route path='/serviceDetail/:title' element={<ServiceDetail />} />
           <Route path='/services/export' element={<Export />} />
           <Route path='/services/import' element={<Import />} />
           <Route path='/services/request' element={<ExportServiceRequest />} />
           <Route path='/product/newProduct' element={<NewProduct />} />
           <Route path='/product/usedProduct' element={<UsedProduct />} />
           <Route path='/product/usedProduct' element={<UsedProduct />} />
+          <Route path='/product/productDescription/:id' element={<ProductDescription />} />
           <Route path='/services/blogs' element={<Blogs />} />
           <Route path='/product' element={<Product />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/registration' element={<Registration />}></Route>
+          <Route path='/dashboard' element={<Dashboard />}>
+            <Route path='/dashboard/adminHome' element={<AdminHome />}></Route>
+            <Route path='/dashboard/addProducts' element={< AddProducts />}></Route>
+            <Route path='/dashboard/addServices' element={<AddServices />}></Route>
+            <Route path='/dashboard/manageProducts' element={<ManagedProducts />}></Route>
+            <Route path='/dashboard/manageServices' element={<ManagedServices />}></Route>
+            <Route path='/dashboard/allusers' element={<Users />}></Route>
+          </Route>
+          <Route path='/updateProduct/:id' element={<UpdateProduct />}></Route>
+          <Route path='/updateService/:id' element={<UpdateService />}></Route>
         </Routes>
       </Suspense>
       <CallButton />

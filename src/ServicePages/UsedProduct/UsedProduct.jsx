@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../ContextApi/AuthContext';
@@ -6,9 +6,10 @@ import UsedProductCard from './UsedProductCard';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowLeft, FiHome, FiFilter, FiX, FiChevronDown } from 'react-icons/fi';
 import { FaSearch, FaStar, FaCheck } from 'react-icons/fa';
+import UseProducts from '../../Utility/Hooks/UseProducts';
 
 const UsedProduct = () => {
-    const { products } = useContext(AuthContext);
+    const [products] = UseProducts()
     const [searchTerm, setSearchTerm] = useState('');
     const [priceRange, setPriceRange] = useState([0, 10000]);
     const [showFilters, setShowFilters] = useState(false);
@@ -201,8 +202,8 @@ const UsedProduct = () => {
                                                             key={category}
                                                             onClick={() => toggleCategory(category)}
                                                             className={`flex items-center w-full text-left px-3 py-2 text-sm transition-colors ${selectedCategories.includes(category)
-                                                                    ? 'text-[#b78d65] font-medium'
-                                                                    : 'text-[#666] hover:text-[#333]'
+                                                                ? 'text-[#b78d65] font-medium'
+                                                                : 'text-[#666] hover:text-[#333]'
                                                                 }`}
                                                         >
                                                             {selectedCategories.includes(category) && (

@@ -5,7 +5,9 @@ import { FcGoogle } from 'react-icons/fc';
 import UsePasswordToggle from '../Utility/Hooks/UsePasswordToggle';
 import AuthContext from '../ContextApi/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import UseAxiosPublic from '../Utility/Hooks/UseAxiosPublic';
 const Login = () => {
+    const axiosPublic = UseAxiosPublic()
     const { icon, inputType, handlePasswordVisibility } = UsePasswordToggle()
     const { signInWithEmailandPassword, handleForgetPassword, loginWithGoogle } = useContext(AuthContext)
     const emailRef = useRef()
@@ -19,9 +21,19 @@ const Login = () => {
 
         signInWithEmailandPassword(email, password)
             .then(res => {
-                console.log(res.user)
-                alert('Login Successfull')
-                navigate('/')
+                const userInfo = {
+                    email: res.user?.email,
+                    displayName: res.user?.displayName
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data)
+                        alert('Login Successfull')
+                        navigate('/')
+                    })
+
+
+
             })
             .catch(error => {
                 alert('Invalid Email or Password', error)
@@ -32,8 +44,17 @@ const Login = () => {
     const handleGoogleLogin = () => {
         loginWithGoogle()
             .then(res => {
-                console.log(res.user)
-                navigate('/')
+                const userInfo = {
+                    email: res.user?.email,
+                    name: res.name?.displayName
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.user)
+                        alert('Login Successfull')
+                        navigate('/')
+                    })
+
             })
             .catch(error => {
                 console.log(error)

@@ -1,11 +1,14 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, {useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import AuthContext from '../../ContextApi/AuthContext';
 import ProductCard from './ProductCard';
+import UseProducts from '../../Utility/Hooks/UseProducts';
 
 const Product = () => {
-    const { products } = useContext(AuthContext);
+    const [products] = UseProducts()
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const [search, setSearch] = useState('')
+    console.log(search)
     const [selectedQuality, setSelectedQuality] = useState('');
     const [selectedBrand, setSelectedBrand] = useState('');
     const [priceRange, setPriceRange] = useState({ min: 0, max: 2000 });
@@ -25,6 +28,12 @@ const Product = () => {
         if (selectedQuality) result = result.filter(p => p.quality === selectedQuality);
         if (selectedBrand) result = result.filter(p => p.brand === selectedBrand);
         result = result.filter(p => p.price >= priceRange.min && p.price <= priceRange.max);
+        if (search.trim()) {
+            result = result.filter(p =>
+                p.name.toLowerCase().includes(search.toLowerCase()) ||
+                p.brand.toLowerCase().includes(search.toLowerCase())
+            );
+        }
 
         if (sortOption === 'lowToHigh') {
             result.sort((a, b) => a.price - b.price);
@@ -33,7 +42,7 @@ const Product = () => {
         }
 
         return result;
-    }, [products, selectedQuality, selectedBrand, priceRange, sortOption]);
+    }, [products, selectedQuality, selectedBrand, priceRange, sortOption, search]);
 
     // Calculate total pages
     const totalPages = Math.ceil(filteredSortedProducts.length / itemsToShow);
@@ -71,67 +80,72 @@ const Product = () => {
                 </div>
 
                 <div className='flex flex-col lg:flex-row gap-6'>
+
                     {/* Filter Sidebar */}
-                    <aside className={`bg-white border border-gray-200 rounded-xl h-[500px] shadow-sm px-6 py-6 w-full lg:w-1/4 space-y-6 ${showFilter ? 'block' : 'hidden'} lg:block`}>
-                        <h2 className='text-xl font-bold text-[#1e928e]'>Filter Products</h2>
+                    <div className='flex flex-col gap-2'>
+                        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Please search here' className='border-2 w-full p-3 rounded-xl bg-white border-gray-300 outline-gray-300' />
+                        <aside className={`bg-white border  border-gray-200 rounded-xl h-[500px] shadow-sm px-6 py-6 w-full  space-y-6 ${showFilter ? 'block' : 'hidden'} lg:block`}>
+                            <h2 className='text-xl font-bold text-[#1e928e]'>Filter Products</h2>
 
-                        {/* Quality */}
-                        <div>
-                            <label className='block text-sm font-medium text-gray-700 mb-2'>Quality</label>
-                            <select
-                                value={selectedQuality}
-                                onChange={e => setSelectedQuality(e.target.value)}
-                                className='w-full p-2 border rounded-md'>
-                                <option value=''>All</option>
-                                <option value='New'>New</option>
-                                <option value='Used'>Used</option>
-                            </select>
-                        </div>
-
-                        {/* Brand */}
-                        <div>
-                            <label className='block text-sm font-medium text-gray-700 mb-2'>Brand</label>
-                            <select
-                                value={selectedBrand}
-                                onChange={e => setSelectedBrand(e.target.value)}
-                                className='w-full p-2 border rounded-md'>
-                                <option value=''>All</option>
-                                {uniqueBrands.map(brand => (
-                                    <option key={brand} value={brand}>{brand}</option>
-                                ))}
-                            </select>
-                        </div>
-
-                        {/* Price Range */}
-                        <div>
-                            <label className='block text-sm font-medium text-gray-700 mb-2'>Price Range</label>
-                            <div className='flex gap-2'>
-                                <input
-                                    type='number'
-                                    value={priceRange.min}
-                                    onChange={e => setPriceRange(prev => ({ ...prev, min: +e.target.value }))}
-                                    placeholder='Min'
-                                    className='w-1/2 p-2 border rounded-md' />
-                                <input
-                                    type='number'
-                                    value={priceRange.max}
-                                    onChange={e => setPriceRange(prev => ({ ...prev, max: +e.target.value }))}
-                                    placeholder='Max'
-                                    className='w-1/2 p-2 border rounded-md' />
+                            {/* Quality */}
+                            <div>
+                                <label className='block text-sm font-medium text-gray-700 mb-2'>Quality</label>
+                                <select
+                                    value={selectedQuality}
+                                    onChange={e => setSelectedQuality(e.target.value)}
+                                    className='w-full p-2 border rounded-md'>
+                                    <option value=''>All</option>
+                                    <option value='New'>New</option>
+                                    <option value='Used'>Used</option>
+                                </select>
                             </div>
-                        </div>
 
-                        {/* Reset Button */}
-                        <button
-                            onClick={() => {
-                                setSelectedQuality('');
-                                setSelectedBrand('');
-                                setPriceRange({ min: 0, max: 2000 });
-                            }}
-                            className='w-full cursor-pointer mt-4 bg-teal-500 hover:bg-teal-700 text-white py-2 rounded-lg font-medium transition'>
-                            Reset Filters
-                        </button>
-                    </aside>
+                            {/* Brand */}
+                            <div>
+                                <label className='block text-sm font-medium text-gray-700 mb-2'>Brand</label>
+                                <select
+                                    value={selectedBrand}
+                                    onChange={e => setSelectedBrand(e.target.value)}
+                                    className='w-full p-2 border rounded-md'>
+                                    <option value=''>All</option>
+                                    {uniqueBrands.map(brand => (
+                                        <option key={brand} value={brand}>{brand}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            {/* Price Range */}
+                            <div>
+                                <label className='block text-sm font-medium text-gray-700 mb-2'>Price Range</label>
+                                <div className='flex gap-2'>
+                                    <input
+                                        type='number'
+                                        value={priceRange.min}
+                                        onChange={e => setPriceRange(prev => ({ ...prev, min: +e.target.value }))}
+                                        placeholder='Min'
+                                        className='w-1/2 p-2 border rounded-md' />
+                                    <input
+                                        type='number'
+                                        value={priceRange.max}
+                                        onChange={e => setPriceRange(prev => ({ ...prev, max: +e.target.value }))}
+                                        placeholder='Max'
+                                        className='w-1/2 p-2 border rounded-md' />
+                                </div>
+                            </div>
+
+                            {/* Reset Button */}
+                            <button
+                                onClick={() => {
+                                    setSelectedQuality('');
+                                    setSelectedBrand('');
+                                    setPriceRange({ min: 0, max: 2000 });
+                                }}
+                                className='w-full cursor-pointer mt-4 bg-teal-500 hover:bg-teal-700 text-white py-2 rounded-lg font-medium transition'>
+                                Reset Filters
+                            </button>
+                        </aside>
+                    </div>
+
 
                     {/* Product Listing */}
                     <main className='w-full lg:w-3/4'>

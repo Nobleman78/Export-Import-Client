@@ -1,11 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import UseAxiosPublic from '../../Utility/Hooks/UseAxiosPublic';
 
 const ExportServiceRequest = () => {
     const navigate = useNavigate();
-
+    const axiosPublic = UseAxiosPublic()
     const handleForm = (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
         const form = event.target;
 
         const formData = {
@@ -16,17 +17,29 @@ const ExportServiceRequest = () => {
             pickupCity: form.pickupcity.value,
             deliveryCity: form.delivercity.value,
             freightType: form.type.value,
-            incoterms: form.incoterms?.value || '', 
+            incoterms: form.incoterms?.value || '',
             width: form.width?.value,
             height: form.height?.value,
             length: form.length?.value,
             weight: form.weight?.value,
-            notes: form.notes?.value,
+            notes: form.notes?.value,   
         };
+        axiosPublic.post('/requestData', formData)
+            .then(res => {
+                if (res.data.success) {
+                    alert('Data sent successfully to the server')
+                    form.reset()
+                }
+                else {
+                    alert('Error to send data to the server')
+                }
+            })
+            .catch(err => {
+                console.error('Error sending data:', err);
+                alert('Failed to send data. Please try again.');
+            });
 
-        console.log('Submitted Data:', formData);
-        form.reset();
-        alert('Form submitted successfully!');
+
     };
 
     return (
@@ -52,15 +65,15 @@ const ExportServiceRequest = () => {
                     <input name='pickupcity' type='text' placeholder='Pickup City' className='border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#2BA89C]' />
                     <input name='delivercity' type='text' placeholder='Delivery City' className='border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#2BA89C]' />
 
-                    <select name='type' className='border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#2BA89C] bg-white pr-8' required>
-                        <option value='' disabled selected>Freight Type</option>
+                    <select name='type' defaultValue="" className='border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#2BA89C] bg-white pr-8' required>
+                        <option value='' disabled>Freight Type</option>
                         <option>Air Freight</option>
                         <option>Sea Freight</option>
                         <option>Road Freight</option>
                     </select>
 
-                    <select name='incoterms' className='border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#2BA89C] bg-white pr-8'>
-                        <option value='' disabled selected>Incoterms</option>
+                    <select name='incoterms' defaultValue="" className='border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#2BA89C] bg-white pr-8'>
+                        <option value='' disabled>Incoterms</option>
                         <option>EXW</option>
                         <option>FOB</option>
                         <option>CIF</option>

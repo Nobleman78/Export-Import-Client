@@ -4,17 +4,43 @@ import Lottie from 'lottie-react';
 import { GrLocation } from 'react-icons/gr';
 import { TbPhoneCall } from 'react-icons/tb';
 import { AiOutlineMail } from 'react-icons/ai';
+import { useState } from 'react';
+import UseAxiosPublic from '../Utility/Hooks/UseAxiosPublic';
 const Contact = () => {
+    const axiosPublic = UseAxiosPublic()
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const validNumberCheck = (phoneNumber) => {
+        const cleaned = phoneNumber.replace(/[\s\-()]/g, '');
+        const bdPhoneRegex = /^(?:\+8801|01)[3-9]\d{8}$/;
+        return bdPhoneRegex.test(cleaned);
+    };
+
     const handleContact = (e) => {
         e.preventDefault();
         const form = e.target;
-        const FirstName = form.firstname.value;
-        const lastName = form.lastname.value;
-        const email = form.email.value;
-        const number = form.phonenumber.value;
-        const message = form.message.value;
-        form.reset()
-        console.log(FirstName, lastName, email, number, message)
+        const formData = {
+            FirstName: form.firstname.value,
+            lastName: form.lastname.value,
+            email: form.email.value,
+            number: form.phonenumber.value,
+            message: form.message.value
+        }
+        if (!validNumberCheck(phoneNumber)) {
+            alert('Please Provide Correct Number')
+            return
+        }
+
+
+        axiosPublic.post('/contactData', formData)
+            .then(res => {
+                if (res.data.success) {
+                    alert('Data sent successfully to the server')
+                    form.reset()
+                }
+                else {
+                    alert('Error to send data to the server')
+                }
+            })
     }
     return (
         <div>
@@ -28,9 +54,9 @@ const Contact = () => {
                     </div>
                     <div className='w-full md:w-1/2 mt-5 bg-teal-700 text-white px-5 md:px-20 py-5  rounded-3xl' >
                         <h2 className='text-4xl font-semibold'>Contact Information</h2>
-                        <div className='flex flex-col gap-3 mt-7 text-xl'>
-                            <p className='flex items-center gap-3'><GrLocation /> Bananni, Dhaka</p>
-                            <p className='flex items-center gap-3'><TbPhoneCall />+8801598634598</p>
+                        <div className='flex flex-col gap-3 mt-7 text-md'>
+                            <p className='flex items-center gap-3'><GrLocation /> 1301/1 East Monipur, Begum Rokeya Sarani, Mirpur-10, Dhaka-1216</p>
+                            <p className='flex items-center gap-3'><TbPhoneCall /> +8801401791719</p>
                             <p className='flex items-center gap-3'><AiOutlineMail />export-import@gmail.com</p>
                         </div>
                         <form onSubmit={handleContact} className=''>
@@ -51,7 +77,7 @@ const Contact = () => {
                                 </div>
                                 <div className='w-full md:w-1/2 flex flex-col'>
                                     <label htmlFor="">Phone Number</label>
-                                    <input required name='phonenumber' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="number" placeholder='Enter Your Phone Number' />
+                                    <input onChange={(e) => setPhoneNumber(e.target.value)} required value={phoneNumber} name='phonenumber' className='shadow-none rounded outline-none border mt-2 px-4 py-2 bg-white text-black' type="number" placeholder='Enter Your Phone Number' />
                                 </div>
                             </div>
                             <div className='flex flex-col mt-5' >

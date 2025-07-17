@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../ContextApi/AuthContext';
@@ -7,15 +7,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowLeft, FiHome, FiFilter, FiX, FiChevronDown } from 'react-icons/fi';
 import { FaSearch, FaStar, FaCheck } from 'react-icons/fa';
 import NewProductCard from './NewProductCard';
+import UseProducts from '../../Utility/Hooks/UseProducts';
 
 const NewProduct = () => {
-    const { products } = useContext(AuthContext);
+    const [products] = UseProducts()
     const [searchTerm, setSearchTerm] = useState('');
     const [priceRange, setPriceRange] = useState([0, 10000]);
     const [showFilters, setShowFilters] = useState(false);
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [sortOption, setSortOption] = useState('featured');
-    
+
     // Extract all unique categories from products
     const categories = useMemo(() => {
         const allCategories = products.flatMap(product => product.categories || []);
@@ -24,27 +25,27 @@ const NewProduct = () => {
 
     const newProducts = useMemo(() => {
         let filtered = products.filter(product => product.quality === 'New');
-        
+
         // Apply search filter
         if (searchTerm) {
-            filtered = filtered.filter(product => 
+            filtered = filtered.filter(product =>
                 product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 product.description.toLowerCase().includes(searchTerm.toLowerCase())
             );
         }
-        
+
         // Apply price filter
-        filtered = filtered.filter(product => 
+        filtered = filtered.filter(product =>
             product.price >= priceRange[0] && product.price <= priceRange[1]
         );
-        
+
         // Apply category filter
         if (selectedCategories.length > 0) {
-            filtered = filtered.filter(product => 
+            filtered = filtered.filter(product =>
                 product.categories?.some(cat => selectedCategories.includes(cat))
             );
         }
-        
+
         // Apply sorting
         switch (sortOption) {
             case 'price-low':
@@ -63,14 +64,14 @@ const NewProduct = () => {
                 // Featured (default sorting)
                 break;
         }
-        
+
         return filtered;
     }, [products, searchTerm, priceRange, selectedCategories, sortOption]);
 
     const toggleCategory = (category) => {
-        setSelectedCategories(prev => 
-            prev.includes(category) 
-                ? prev.filter(c => c !== category) 
+        setSelectedCategories(prev =>
+            prev.includes(category)
+                ? prev.filter(c => c !== category)
                 : [...prev, category]
         );
     };
@@ -84,17 +85,17 @@ const NewProduct = () => {
 
     return (
         <div className='min-h-screen ]'>
-           
-            
+
+
             <Helmet>
                 <title> New Products | Eximport</title>
             </Helmet>
-           
+
 
             {/* Main Content */}
             <div className='relative py-12 px-6 lg:px-20 max-w-7xl mx-auto'>
                 {/* Luxury Breadcrumb */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -109,14 +110,14 @@ const NewProduct = () => {
                 </motion.div>
 
                 {/* Premium Header */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
                     className='mb-12 text-center'
                 >
                     <h1 className='text-4xl md:text-5xl font-serif font-light text-[#333] mb-4'>
-                         <span className='font-medium'>New</span> Products
+                        <span className='font-medium'>New</span> Products
                     </h1>
                     <p className='text-[#666] max-w-2xl mx-auto text-lg'>
                         Discover authenticated premium goods with exceptional value and quality assurance.
@@ -124,7 +125,7 @@ const NewProduct = () => {
                 </motion.div>
 
                 {/* Luxury Control Bar */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     className='flex flex-col md:flex-row gap-4 items-center justify-between mb-12'
@@ -139,10 +140,10 @@ const NewProduct = () => {
                             className='w-full pl-12 pr-4 py-3 border-2 bg-white focus:outline-none   rounded-full'
                         />
                     </div>
-                    
+
                     <div className='flex items-center gap-4 w-full md:w-auto'>
                         <div className='relative group'>
-                            <button 
+                            <button
                                 className='flex items-center gap-2 px-4 py-3 border border-[#ddd] text-[#555] hover:border-[#b78d65] transition-colors'
                                 onClick={() => setShowFilters(!showFilters)}
                             >
@@ -154,10 +155,10 @@ const NewProduct = () => {
                                     </span>
                                 ) : null}
                             </button>
-                            
+
                             <AnimatePresence>
                                 {showFilters && (
-                                    <motion.div 
+                                    <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: 20 }}
@@ -166,13 +167,13 @@ const NewProduct = () => {
                                         <div className='flex justify-between items-center mb-4'>
                                             <h3 className='text-lg font-medium text-[#333]'>Refine Selection</h3>
                                             <div className='flex gap-2'>
-                                                <button 
+                                                <button
                                                     onClick={resetFilters}
                                                     className='text-sm text-[#b78d65] hover:underline'
                                                 >
                                                     Reset
                                                 </button>
-                                                <button 
+                                                <button
                                                     onClick={() => setShowFilters(false)}
                                                     className='text-[#999] hover:text-[#333]'
                                                 >
@@ -180,7 +181,7 @@ const NewProduct = () => {
                                                 </button>
                                             </div>
                                         </div>
-                                        
+
                                         <div className='space-y-6'>
                                             {/* Price Range Filter */}
                                             <div>
@@ -201,7 +202,7 @@ const NewProduct = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             {/* Category Filter */}
                                             <div>
                                                 <h4 className='font-medium mb-3 text-[#555]'>Categories</h4>
@@ -210,11 +211,10 @@ const NewProduct = () => {
                                                         <button
                                                             key={category}
                                                             onClick={() => toggleCategory(category)}
-                                                            className={`flex items-center w-full text-left px-3 py-2 text-sm transition-colors ${
-                                                                selectedCategories.includes(category)
-                                                                    ? 'text-[#b78d65] font-medium'
-                                                                    : 'text-[#666] hover:text-[#333]'
-                                                            }`}
+                                                            className={`flex items-center w-full text-left px-3 py-2 text-sm transition-colors ${selectedCategories.includes(category)
+                                                                ? 'text-[#b78d65] font-medium'
+                                                                : 'text-[#666] hover:text-[#333]'
+                                                                }`}
                                                         >
                                                             {selectedCategories.includes(category) && (
                                                                 <FaCheck className='mr-2 text-[#b78d65]' size={12} />
@@ -229,7 +229,7 @@ const NewProduct = () => {
                                 )}
                             </AnimatePresence>
                         </div>
-                        
+
                         <div className='relative group flex-1 md:flex-none'>
                             <select
                                 value={sortOption}
@@ -249,7 +249,7 @@ const NewProduct = () => {
 
                 {/* Luxury Products Grid */}
                 {newProducts?.length > 0 ? (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
@@ -268,7 +268,7 @@ const NewProduct = () => {
                         ))}
                     </motion.div>
                 ) : (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         className='text-center col-span-full py-16'
@@ -292,7 +292,7 @@ const NewProduct = () => {
                         </div>
                     </motion.div>
                 )}
-                
+
             </div>
         </div>
     );

@@ -1,14 +1,15 @@
-import { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import AuthContext from '../../ContextApi/AuthContext';
+import UseServices from '../../Utility/Hooks/UseServices';
 
 const ServiceDetail = () => {
     const { title } = useParams();
-    const { services } = useContext(AuthContext);
+    const decodedTitle = decodeURIComponent(title);
+    const [services] = UseServices()
     const navigate = useNavigate()
     const filterData = services.find(
-        (service) => service.title.toLowerCase() === decodeURIComponent(title).toLowerCase()
+        (service) => service.title.toLowerCase() === decodedTitle.toLowerCase()
     );
+
 
     if (!filterData) {
         return (
@@ -34,7 +35,19 @@ const ServiceDetail = () => {
                     </div>
                     {filterData.description}
 
-                    <button onClick={() => navigate('/services/request')} className='bg-teal-400 px-5 py-3 text-white cursor-pointer rounded hover:bg-teal-700'>Call Us to Take Service</button>
+                    <div className='flex gap-3'>
+                        <button onClick={() => { navigate('/services/request', scrollTo(0, 0)) }} className='bg-teal-400 px-5 py-3 text-white cursor-pointer rounded hover:bg-teal-700'>Take Service</button>
+                        <div className="relative group">
+                            <button className='bg-teal-400 px-5 py-3 text-white cursor-pointer rounded hover:bg-teal-700'>
+                                Call Us
+                            </button>
+
+                            <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-4 py-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
+                                +8801401791719
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div >
