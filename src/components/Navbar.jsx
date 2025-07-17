@@ -245,6 +245,7 @@ const Navbar = () => {
                     <NavLink to='/services' onClick={() => { toggleMenu(); scrollTo(0, 0); }} className={navLinkClass}>Services</NavLink>
                     <NavLink to='/product' onClick={() => { toggleMenu(); scrollTo(0, 0); }} className={navLinkClass}>Product</NavLink>
                     <NavLink to='/contact' onClick={() => { toggleMenu(); scrollTo(0, 0); }} className={navLinkClass}>Contact</NavLink>
+                    <NavLink to='/dashboard' onClick={() => { toggleMenu(); scrollTo(0, 0); }} className={navLinkClass}>Dashboard</NavLink>
 
                     {user ? (
                         <button onClick={() => { handleLogout(); toggleMenu(); }} className='text-left'>Logout</button>
