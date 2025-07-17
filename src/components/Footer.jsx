@@ -65,7 +65,7 @@ const Footer = () => {
                                     <li key={i} className='flex items-center gap-2 hover:translate-x-2 transition-transform duration-300 cursor-pointer'>
                                         <MdOutlineDoubleArrow className='text-teal-600' />
                                         {item.to ? (
-                                            <Link to={item.to} className="hover:underline">
+                                            <Link onClick={() => window.scrollTo(0, 0)} to={item.to} className="hover:underline">
                                                 {item.label}
                                             </Link>
                                         ) : item.href ? (
