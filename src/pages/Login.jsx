@@ -9,7 +9,7 @@ import UseAxiosPublic from '../Utility/Hooks/UseAxiosPublic';
 const Login = () => {
     const axiosPublic = UseAxiosPublic()
     const { icon, inputType, handlePasswordVisibility } = UsePasswordToggle()
-    const { signInWithEmailandPassword, handleForgetPassword, loginWithGoogle } = useContext(AuthContext)
+    const { signInWithEmailandPassword, handleForgetPassword } = useContext(AuthContext)
     const emailRef = useRef()
     const navigate = useNavigate()
 
@@ -41,25 +41,25 @@ const Login = () => {
         form.reset()
     }
 
-    const handleGoogleLogin = () => {
-        loginWithGoogle()
-            .then(res => {
-                const userInfo = {
-                    email: res.user?.email,
-                    name: res.name?.displayName
-                }
-                axiosPublic.post('/users', userInfo)
-                    .then(res => {
-                        console.log(res.user)
-                        alert('Login Successfull')
-                        navigate('/')
-                    })
+    // const handleGoogleLogin = () => {
+    //     loginWithGoogle()
+    //         .then(res => {
+    //             const userInfo = {
+    //                 email: res.user?.email,
+    //                 name: res.name?.displayName
+    //             }
+    //             axiosPublic.post('/users', userInfo)
+    //                 .then(res => {
+    //                     console.log(res.user)
+    //                     alert('Login Successfull')
+    //                     navigate('/')
+    //                 })
 
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }
+    //         })
+    //         .catch(error => {
+    //             console.log(error)
+    //         })
+    // }
     const ForgetPassword = () => {
         const email = emailRef.current?.value
         handleForgetPassword(email)
@@ -82,10 +82,11 @@ const Login = () => {
                             <h2 className=''>New user</h2>
                             <button onClick={() => navigate('/registration')} className='text-blue-500 text-sm cursor-pointer hover:underline'>Register Now</button>
                         </div>
-                        {/* Login With Google */}
-                        <div onClick={handleGoogleLogin} className='flex items-center justify-center gap-3 bg-gray-100 py-2 rounded  mb-5 cursor-pointer'>
+                        {/* Login With Google  */}
+                        {/* onClick={handleGoogleLogin} */}
+                        {/* <div  className='flex items-center justify-center gap-3 bg-gray-100 py-2 rounded  mb-5 cursor-pointer'>
                             <FcGoogle className='text-xl' /><button >Login with Google</button>
-                        </div>
+                        </div> */}
                         <span className='flex justify-center'>Or</span>
 
                         <form onSubmit={handleLogin}>
