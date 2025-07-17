@@ -237,7 +237,7 @@ const Navbar = () => {
                 <div className="px-4 py-2 text-center text-sm">Service not found.</div>
             )}
 
-            {/* 📱 Mobile Nav */}
+            {/* Mobile Nav */}
             {menuOpen && (
                 <div className='lg:hidden bg-gray-200 py-5 flex flex-col gap-4 px-6 pb-4 text-base font-medium'>
                     <NavLink to='/' onClick={() => { toggleMenu(); scrollTo(0, 0); }} className={navLinkClass}>Home</NavLink>
@@ -247,7 +247,7 @@ const Navbar = () => {
                     <NavLink to='/contact' onClick={() => { toggleMenu(); scrollTo(0, 0); }} className={navLinkClass}>Contact</NavLink>
 
                     {user ? (
-                        <button onClick={() => { handleLogout(); toggleMenu(); }} className='text-left text-[#1e928e]'>Logout</button>
+                        <button onClick={() => { handleLogout(); toggleMenu(); }} className='text-left'>Logout</button>
                     ) : (
                         <NavLink to='/login' onClick={() => { toggleMenu(); scrollTo(0, 0); }} className={navLinkClass}>Login</NavLink>
                     )}

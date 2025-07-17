@@ -51,6 +51,14 @@ const Dashboard = () => {
                         <FaListUl className="mr-0 md:mr-3 text-lg" />
                         <span className="hidden md:inline">Manage Services</span>
                     </NavLink>
+                    <NavLink to="/dashboard/contactData" className={getNavLinkClass}>
+                        <FaListUl className="mr-0 md:mr-3 text-lg" />
+                        <span className="hidden md:inline">Contact Data</span>
+                    </NavLink>
+                    <NavLink to="/dashboard/requestServiceData" className={getNavLinkClass}>
+                        <FaListUl className="mr-0 md:mr-3 text-lg" />
+                        <span className="hidden md:inline">Request Service Data</span>
+                    </NavLink>
                 </nav>
             </div>
 

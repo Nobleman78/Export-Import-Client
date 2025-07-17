@@ -19,6 +19,8 @@ import UpdateProduct from './pages/Dashboard/UpdateProduct';
 import UpdateService from './pages/Dashboard/UpdateService';
 import ProductDescription from './pages/Product/ProductDescription';
 import Users from './pages/Dashboard/Users/Users';
+import ContactData from './pages/Dashboard/ContactData';
+import RequestData from './pages/Dashboard/RequestData';
 
 
 const Home = lazy(() => import('./pages/Home'));
@@ -66,6 +68,8 @@ function App() {
             <Route path='/dashboard/manageProducts' element={<ManagedProducts />}></Route>
             <Route path='/dashboard/manageServices' element={<ManagedServices />}></Route>
             <Route path='/dashboard/allusers' element={<Users />}></Route>
+            <Route path='/dashboard/contactData' element={<ContactData />}></Route>
+            <Route path='/dashboard/requestServiceData' element={<RequestData />}></Route>
           </Route>
           <Route path='/updateProduct/:id' element={<UpdateProduct />}></Route>
           <Route path='/updateService/:id' element={<UpdateService />}></Route>
