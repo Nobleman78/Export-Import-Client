@@ -1,5 +1,6 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import UseProducts from '../../Utility/Hooks/UseProducts';
+import { IoIosArrowForward } from "react-icons/io";
 
 const ProductDescription = () => {
     const { id } = useParams();
@@ -16,9 +17,14 @@ const ProductDescription = () => {
 
     return (
         <div className='bg-gray-100 min-h-screen py-10'>
+            <div className='bg-white mb-5 px-4 lg:px-10 py-3 flex items-center gap-3 text-sm lg:text-md'>
+                <Link to='/product' className='flex items-center gap-1 cursor-pointer'>Products <IoIosArrowForward/></Link>
+                <span className='flex items-center gap-1'>Product Detailes <IoIosArrowForward/></span>
+                <span>{product.name}</span>
+            </div>
             <main className=' lg:max-w-7xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden p-6 md:p-10 grid md:grid-cols-2 gap-10'>
                 <div className='flex justify-center items-center bg-gray-50 p-6 rounded-lg'>
-                    <img src={product.img} alt={product.name} className='w-full max-h-96 object-contain'/>
+                    <img src={product.img} alt={product.name} className='w-full max-h-96 object-contain' />
                 </div>
                 <div className='space-y-4'>
                     <h2 className='text-3xl font-bold text-gray-800'>{product.name}</h2>

@@ -11,22 +11,22 @@ const ChooseUs = () => {
         {
             image: imageOne,
             title: 'Secure Trade Process',
-            des: 'Fusce lorem nunc sollicitudin eget eaccums temp.'
+            des: 'We ensure every transaction is protected with verified documentation, transparent pricing, and compliance with international trade laws, giving you peace of mind throughout the process.'
         },
         {
             image: imageTwo,
             title: 'Buyer Protection System',
-            des: 'Fusce lorem nunc sollicitudin eget eaccums temp.'
+            des: 'Our buyer protection system guarantees product quality, shipment tracking, and dispute resolution to safeguard your investment from order to delivery.'
         },
         {
             image: imageThree,
             title: 'Buyer Protection System',
-            des: 'Fusce lorem nunc sollicitudin eget eaccums temp.'
+            des: 'We protect sellers with secure payment handling, fraud detection, and fair dispute resolution, ensuring trust and safety on every deal.'
         },
         {
             image: imageFour,
             title: '24/7 Quality',
-            des: 'Fusce lorem nunc sollicitudin eget eaccums temp.'
+            des: 'Our dedicated support team is available 24/7 to assist with logistics, customs, documentation, and any questions you may have—anywhere in the world.'
         }
     ]
     return (

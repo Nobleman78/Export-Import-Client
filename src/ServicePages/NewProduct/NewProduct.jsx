@@ -1,8 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import AuthContext from '../../ContextApi/AuthContext';
-
+import { IoIosArrowForward } from "react-icons/io";
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowLeft, FiHome, FiFilter, FiX, FiChevronDown } from 'react-icons/fi';
 import { FaSearch, FaStar, FaCheck } from 'react-icons/fa';
@@ -105,7 +104,8 @@ const NewProduct = () => {
                         <FiHome className='mr-2' />
                         Home
                     </Link>
-                    <span className='mx-2'>/</span>
+                    <span className='mx-2'><IoIosArrowForward/></span>
+                    <Link className='flex items-center gap-2' to='/product'> Products <IoIosArrowForward className='mr-2'/></Link>
                     <span className='text-teal-500'> New Products</span>
                 </motion.div>
 

@@ -61,7 +61,12 @@ const teamMembers = [
 ];
 
 const About = () => {
-    const missionText = 'We are passionate about empowering individuals to transform their lives through the power of global trade. We believe that everyone should have access to seamless, affordable, and reliable import-export services, regardless of scale.';
+    const whyText = "Global trade can be complex, especially for small and medium businesses. We exist to bridge that gap—removing obstacles, reducing costs, and making international business more accessible and transparent.";
+
+    const whatText = "We provide a comprehensive platform that connects exporters and importers, manages documentation, offers real-time shipment tracking, and ensures secure global transactions through verified partners.";
+
+    const howText = "By combining advanced technology with experienced logistics partners and trade compliance experts, we streamline every step of the export-import process—from sourcing to final delivery.";
+
     return (
         <div>
             <Helmet>
@@ -84,10 +89,10 @@ const About = () => {
                     </div>
 
                     <div className='mx-5 lg:mx-20 my-10 flex flex-col gap-10 '>
-                        <InfoCard title='Why' text={missionText} image={why} />
+                        <InfoCard title='Why' text={whyText} image={why} />
                         <div className='flex flex-col lg:flex-row gap-10'>
-                            <InfoCard title='What' text={missionText} image={what} />
-                            <InfoCard title='How' text={missionText} image={how} />
+                            <InfoCard title='What' text={whatText} image={what} />
+                            <InfoCard title='How' text={howText} image={how} />
                         </div>
                     </div>
                 </section>

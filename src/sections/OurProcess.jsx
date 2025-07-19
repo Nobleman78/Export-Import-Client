@@ -29,9 +29,7 @@ const OurProcess = () => {
                     </div>
 
                     <p style={{fontFamily:'Poppins'}} className='text-lg text-gray-800 text-justify max-w-xl leading-relaxed font-sans'>
-                        Fusce lorem nunc, sollicitudin eget eaccumsan temp. Curabitu quis ullamcorper neque. Donec pulvinar arcu nec
-                        lectus rhoncus. Praesent ut velit non augue ornare libero. Nulla venenatis enim, quis accumsan neque tortor
-                        eu felis.
+                        We follow a structured and efficient process to ensure smooth handling of every export-import operation. From the initial inquiry to final delivery, each step is optimized for speed, compliance, and customer satisfaction. With clear communication and expert support at every stage, we make global trade simple and stress-free.
                     </p>
 
                     <hr className='border-gray-300 max-w-xl' />

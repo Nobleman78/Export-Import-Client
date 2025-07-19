@@ -12,44 +12,45 @@ const testimonials = [
         role: 'Happy Customer',
         image: avatar,
         feedback:
-            'Aaoreet vestibulum metus. Intege volutpaty nunc augue, sit amet auctor magna blandit eget. Maecenas consequat tortor ac vulpu nunc augue, sit amet auctor magna blandit ate fringilla. In facilisis volutpat.',
+            'Eximport made the entire importing process seamless. From documentation to delivery, everything was handled with professionalism and efficiency. Highly recommended for global trade services!',
     },
     {
         name: 'Shirley Harris',
         role: 'Happy Customer',
         image: avatar,
         feedback:
-            'Aaoreet vestibulum metus. Intege volutpaty nunc augue, sit amet auctor magna blandit eget. Maecenas consequat tortor ac vulpu nunc augue, sit amet auctor magna blandit ate fringilla. In facilisis volutpat.',
+            'We’ve partnered with several logistics firms before, but none offered the level of transparency and support we got from Eximport. Their real-time tracking system is a game changer.',
     },
     {
         name: 'Max Devi',
         role: 'Happy Customer',
         image: avatar,
         feedback:
-            'Aaoreet vestibulum metus. Intege volutpaty nunc augue, sit amet auctor magna blandit eget. Maecenas consequat tortor ac vulpu nunc augue, sit amet auctor magna blandit ate fringilla. In facilisis volutpat.',
+            'As a first-time exporter, I was nervous about customs and compliance. The Eximport team guided me every step of the way. Their expertise made the entire experience stress-free.',
     },
     {
         name: 'Alex Mars',
         role: 'Happy Customer',
         image: avatar,
         feedback:
-            'Aaoreet vestibulum metus. Intege volutpaty nunc augue, sit amet auctor magna blandit eget. Maecenas consequat tortor ac vulpu nunc augue, sit amet auctor magna blandit ate fringilla. In facilisis volutpat.',
+            'What stood out most was their communication. I always knew where my shipment was and what to expect next. Reliable, fast, and cost-effective!',
     },
     {
         name: 'Magnus Carlsen',
         role: 'Happy Customer',
         image: avatar,
         feedback:
-            'Aaoreet vestibulum metus. Intege volutpaty nunc augue, sit amet auctor magna blandit eget. Maecenas consequat tortor ac vulpu nunc augue, sit amet auctor magna blandit ate fringilla. In facilisis volutpat.',
+            'Eximport helped us expand our business to new markets without the usual complications. Their warehousing and logistics services are top-notch.',
     },
     {
         name: 'Jotis Chopra',
         role: 'Happy Customer',
         image: avatar,
         feedback:
-            'Aaoreet vestibulum metus. Intege volutpaty nunc augue, sit amet auctor magna blandit eget. Maecenas consequat tortor ac vulpu nunc augue, sit amet auctor magna blandit ate fringilla. In facilisis volutpat.',
+            'Thanks to Eximport, we saved both time and money on our last international shipment. Their support team is responsive and very knowledgeable.',
     },
 ];
+
 
 const Testimonial = () => {
     const [groupedTestimonials, setGroupedTestimonials] = useState([]);

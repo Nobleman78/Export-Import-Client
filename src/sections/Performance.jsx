@@ -14,7 +14,7 @@ const Performance = () => {
                         <h2 className='text-md sm:text-xl font-semibold'>Welcome to</h2>
                         <h2 className='text-2xl sm:text-5xl font-semibold'>World Class Logistic and Transpotation Service</h2>
                     </div>
-                    <p style={{ fontFamily: 'roboto' }} className='text-xl text-justify'>Fusce lorem nunc, sollicitudin eget eaccumsan temp Curabitu quis ullamcorper neque. Donec pullmassad arcu necfa lectus rhon. Praeset utvelinon augueining haselu ornare liberone acce volupat Nulla nvenenats enim, quis accumsan keque tortor eu felis.</p>
+                    <p style={{ fontFamily: 'roboto' }} className='text-xl text-justify'>We offer reliable, fast, and secure logistics solutions tailored to your global trade needs. From customs clearance to last-mile delivery, our expert team ensures your goods reach their destination on time, every time—no matter the size or location. Partner with us for a smooth, end-to-end shipping experience that keeps your business moving forward.</p>
                     <div className='relative w-full'>
                         <img src={welcomeSmallImage} loading='lazy' alt="welcome-small-image" className='rounded-xl relative w-full' />
                         <div className='absolute top-10 left-10 lg:left-20  w-70 flex flex-col gap-5'>

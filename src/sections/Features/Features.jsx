@@ -9,23 +9,23 @@ const Features = () => {
         {
             image: imageOne,
             title: 'Order Placement',
-            des: 'lacinia tincida apteacitis socosqu ator torque and massa placduis.'
+            des: 'Seamlessly place international or domestic orders through our intuitive platform. We streamline the order process to ensure accuracy, speed, and transparency from the start.'
 
         },
         {
             image: imageTwo,
             title: 'Inventory Management',
-            des: 'lacinia tincida apteacitis socosqu ator torque and massa placduis.'
+            des: 'Our smart inventory system helps you monitor stock levels in real time, reduce overstocking or shortages, and manage products efficiently across multiple locations.'
         },
         {
             image: imageThree,
             title: 'Warehousing and Storage',
-            des: 'lacinia tincida apteacitis socosqu ator torque and massa placduis.'
+            des: 'We offer secure, climate-controlled warehousing solutions for short- and long-term storage. Our facilities are optimized for safety, accessibility, and fast dispatch.'
         },
         {
             image: imageFour,
             title: 'Transportation',
-            des: 'lacinia tincida apteacitis socosqu ator torque and massa placduis.'
+            des: 'Benefit from a global transportation network that ensures timely delivery by air, sea, or land. We handle route optimization, customs clearance, and real-time tracking for complete reliability.'
         }
     ]
     return (

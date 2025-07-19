@@ -9,24 +9,24 @@ import ServiceCard from './ServiceCard';
 const Service = () => {
     const services = [
         {
-            image: serviceImageOne,
+            image: serviceImageFour,
             title: 'Fruites and Vegetables',
             des: 'Life moves pretty fast. If you dont stop and look around once in a while, you could miss it. The sun sets, painting the sky with hues of orange and purple, a gentle reminder of natures endless beauty.'
 
         },
         {
-            image: serviceImageTwo,
+            image: serviceImageOne,
             title: 'Engineering Goods',
             des: 'Life moves pretty fast. If you dont stop and look around once in a while, you could miss it. The sun sets, painting the sky with hues of orange and purple, a gentle reminder of natures endless beauty.'
 
         },
         {
-            image: serviceImageThree,
+            image: serviceImageTwo,
             title: 'Electronics Goods',
             des: 'Life moves pretty fast. If you dont stop and look around once in a while, you could miss it. The sun sets, painting the sky with hues of orange and purple, a gentle reminder of natures endless beauty.'
         },
         {
-            image: serviceImageFour,
+            image: serviceImageThree,
             title: 'Drug and Pharmaceuticals',
             des: 'Life moves pretty fast. If you dont stop and look around once in a while, you could miss it. The sun sets, painting the sky with hues of orange and purple, a gentle reminder of natures endless beauty.'
 

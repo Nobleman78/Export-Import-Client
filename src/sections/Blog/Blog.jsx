@@ -7,24 +7,24 @@ const Blog = () => {
     const blog = [
         {
             image: blogOne,
-            title: 'When an unknown printer took a galley scrambled',
-            des: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum…',
-            publised_Date: '10-1-2024'
-
+            title: '5 Common Challenges in International Shipping and How to Overcome Them',
+            des: 'Discover the top hurdles businesses face in global logistics and learn practical strategies to avoid delays, minimize costs, and stay compliant.',
+            publised_Date:'10-1-2024'
         },
         {
             image: blogTwo,
-            title: 'It is a long established fact that a reader',
-            des: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum…',
+            title: 'Understanding Incoterms: A Guide for Exporters and Importers',
+            des: 'Get a clear breakdown of Incoterms like FOB, CIF, and EXW. Learn how they impact cost, risk, and responsibility in global trade agreements.',
             publised_Date: '10-1-2024'
         },
         {
             image: blogThree,
-            title: 'Sollicitudin, tortor augue efficitur esteing',
-            des: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum…',
+            title: 'How Technology is Transforming the Export-Import Industry',
+            des: 'From AI to real-time tracking, explore how digital solutions are making international trade faster, smarter, and more transparent.',
             publised_Date: '10-1-2024'
         },
-    ]
+    ];
+
     return (
         <div className='bg-gray-200  '>
             <main className='mt-20 py-20'>

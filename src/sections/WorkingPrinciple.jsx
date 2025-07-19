@@ -32,7 +32,7 @@ const WorkingPrinciple = () => {
                         <h2 className='text-md lg:text-3xl'>How It Works</h2>
                         <p className='text-2xl lg:text-5xl font-semibold'>We Provide Timely and Cost Effective.</p>
                     </div>
-                    <p style={{fontFamily:'roboto'}} className='text-xl'>Fusce lorem nunc, sollicitudin eget eaccumsan temp Curabitu quis ullamcorper neque. Donec pullmassad arcu necfa lectus rhon.</p>
+                    <p style={{fontFamily:'roboto'}} className='text-xl'>From placing your order to final delivery, our process is designed for speed, accuracy, and transparency. We handle everything—from product sourcing and customs documentation to warehousing, inventory management, and transportation—ensuring your goods move efficiently across borders.</p>
                     {/* Middle Part */}
                     <div className='flex flex-col md:flex-row gap-6 sm:gap-4 '>
                         <div className='flex items-center gap-3 w-full sm:w-1/2'>

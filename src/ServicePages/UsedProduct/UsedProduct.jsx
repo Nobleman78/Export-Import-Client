@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowLeft, FiHome, FiFilter, FiX, FiChevronDown } from 'react-icons/fi';
 import { FaSearch, FaStar, FaCheck } from 'react-icons/fa';
 import UseProducts from '../../Utility/Hooks/UseProducts';
+import { IoIosArrowForward } from 'react-icons/io';
 
 const UsedProduct = () => {
     const [products] = UseProducts()
@@ -103,7 +104,8 @@ const UsedProduct = () => {
                         <FiHome className='mr-2' />
                         Home
                     </Link>
-                    <span className='mx-2'>/</span>
+                    <span className='mx-2'><IoIosArrowForward /></span>
+                    <Link className='flex items-center gap-2' to='/product'> Products <IoIosArrowForward className='mr-2' /></Link>
                     <span className='text-teal-400'> Used Products</span>
                 </motion.div>
 
