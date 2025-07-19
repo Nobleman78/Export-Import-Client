@@ -9,7 +9,7 @@ const Footer = () => {
 
                 {/* Brand Info */}
                 <div>
-                    <img src={logo} alt='Logo' className='w-28 mb-4' />
+                    <img src={logo} alt='Logo' className='w-48 mb-4' />
                     <p>
                         We provide comprehensive import-export solutions tailored to your business needs.
                     </p>
