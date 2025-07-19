@@ -94,7 +94,7 @@ const Navbar = () => {
                     <div className='flex lg:hidden items-start gap-3'>
                         <div>
                             <h2 className='text-[#1e928e] font-semibold'>Have Any Question</h2>
-                            <p className='text-lg font-bold'>+8801534589756</p>
+                            <p className='text-lg font-bold'>+8801610881122</p>
                         </div>
                     </div>
                 </div>
@@ -180,7 +180,7 @@ const Navbar = () => {
                 <div className='hidden lg:flex items-center gap-3'>
                     <div>
                         <h2 className='text-[#1e928e] font-semibold'>Have Any Question</h2>
-                        <p className='text-lg font-bold'>+8801401791719</p>
+                        <p className='text-lg font-bold'>+8801610881122</p>
                     </div>
                 </div>
 

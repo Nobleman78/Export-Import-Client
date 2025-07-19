@@ -1,101 +1,69 @@
-import React from 'react';
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import logo from '../assets/NavImages/logo.png';
 import { Link } from 'react-router-dom';
-import { MdOutlineDoubleArrow } from "react-icons/md";
 
 const Footer = () => {
-    const footerLinks = [
-        {
-            title: 'Services',
-            items: [
-                { label: 'Import Solutions', to: '/services/import' },
-                { label: 'Export Solutions', to: '/services/export' },
-                { label: 'Customs Brokerage', to: '/services/customs' },
-                { label: 'Freight Forwarding', to: '/services/freight' },
-            ],
-        },
-        {
-            title: 'Company',
-            items: [
-                { label: 'About Us', to: '/about' },
-                { label: 'Careers', to: '/careers' },
-                { label: 'Press', to: '/press' },
-                { label: 'Blog', to: '/blog' },
-            ],
-        },
-        {
-            title: 'Contact Us',
-            items: [
-                { label: 'Phone: 8801401791719', isText: true },
-                { label: 'Email: info@company.com', isText: true },
-                { label: 'Address: 1301/1 East Monipur, Begum Rokeya Sarani, Mirpur-10, Dhaka-1216', isText: true },
-            ],
-        },
-        {
-            title: 'Connect With Us',
-            items: [
-                { label: 'Facebook', href: 'https://facebook.com/yourpage' },
-                { label: 'Twitter', href: 'https://twitter.com/yourpage' },
-                { label: 'LinkedIn', href: 'https://linkedin.com/company/yourpage' },
-                { label: 'Instagram', href: 'https://instagram.com/yourpage' },
-            ],
-        }
-    ];
-
     return (
-        <footer className='bg-gray-50 px-10 py-10 mt-10 text-gray-800'>
-            <div className='flex flex-col lg:flex-row justify-between gap-10'>
-                {/* Logo and Description */}
-                <div className='max-w-sm'>
-                    <Link to='/' onClick={() => window.scrollTo(0, 0)}>
-                        <img src={logo} loading='lazy' alt='Company Logo' className='w-40 cursor-pointer' />
-                    </Link>
-                    <p className='mt-4 text-gray-600'>
+        <footer className='bg-teal-800 text-white pt-10 border-t border-gray-200 text-lg'>
+            <div className='max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6'>
+
+                {/* Brand Info */}
+                <div>
+                    <img src={logo} alt='Logo' className='w-28 mb-4' />
+                    <p>
                         We provide comprehensive import-export solutions tailored to your business needs.
                     </p>
                 </div>
 
-                {/* Dynamic Sections */}
-                <div className='flex flex-wrap gap-10'>
-                    {footerLinks.map((section, index) => (
-                        <div key={index}>
-                            <h3 className='font-semibold mb-3'>{section.title}</h3>
-                            <ul className='space-y-2'>
-                                {section.items.map((item, i) => (
-                                    <li key={i} className='flex items-center gap-2 hover:translate-x-2 transition-transform duration-300 cursor-pointer'>
-                                        <MdOutlineDoubleArrow className='text-teal-600' />
-                                        {item.to ? (
-                                            <Link onClick={() => window.scrollTo(0, 0)} to={item.to} className="hover:underline">
-                                                {item.label}
-                                            </Link>
-                                        ) : item.href ? (
-                                            <a href={item.href} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                                                {item.label}
-                                            </a>
-                                        ) : item.isText ? (
-                                            <span>{item.label}</span>
-                                        ) : (
-                                            <span>{item.label}</span>
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                {/* Services */}
+                <div>
+                    <h4 className='font-semibold mb-2 text-xl '>Services</h4>
+                    <ul className='space-y-1'>
+                        <Link to='/services/import' onClick={() => scrollTo(0, 0)}><li className='hover:text-green-500'>Import Solutions</li></Link>
+                        <Link to='/services/export' onClick={() => scrollTo(0, 0)}><li className='hover:text-green-500'>Export Solutions</li></Link>
+                        <Link><li>Freight Forwarding</li></Link>
+
+                    </ul>
+                </div>
+
+                {/* Contact */}
+                <div>
+                    <h4 className='font-semibold mb-2 text-xl'>Contact Us</h4>
+                    <p>Email: <a href='mailto:ask@yourdomain.com' className='text-white-600'>ask@yourdomain.com</a></p>
+                    <p>Phone: +8801610881122, +8801401791711 </p>
+                    <p>TelePhone: +880258053830</p>
+                    <p>WhatsApp: <a href='https://wa.me/8801401791719' // your WhatsApp number with country code
+                        target='_blank'
+                        rel='noopener noreferrer' className='text-blue-200 underline'>+8801401791719</a></p>
+                    <div className='flex gap-3 mt-3'>
+                        <a href='https://www.facebook.com/eximport' className='bg-[#3b5998] text-white p-2 rounded-full'><FaFacebookF /></a>
+                        <a href='https://x.com/eximport' className='bg-[#1DA1F2] text-white p-2 rounded-full'><FaTwitter /></a>
+                        {/* <a href='www.facebook.com/eximport' className='bg-[#E1306C] text-white p-2 rounded-full'><FaInstagram /></a> */}
+                        <a href='https://www.youtube.com/eximport' className='bg-[#FF0000] text-white p-2 rounded-full'><FaYoutube /></a>
+                        <a href='https://www.linkedin.com/eximport' className='bg-[#0077b5] text-white p-2 rounded-full'><FaLinkedinIn /></a>
+                    </div>
+                </div>
+
+                {/* Offices */}
+                <div className='flex flex-col gap-3'>
+                    <h4 className='font-semibold mb-2 text-xl'>Our Offices</h4>
+                    <p>
+                        <strong>Dhaka:</strong><br />
+                        <p className='mt-1'>  Address: 1301/1 East Monipur, Begum Rokeya Sarani, Mirpur-10, Dhaka-1216</p>
+                    </p>
+                    <p>
+                        <strong>HongKong:</strong><br />
+                        <p className='mt-1'>  Address: 303 Keen Hung Commercial Building 80 Queen's Road East Wanchai,Wan Chai District</p>
+                    </p>
                 </div>
             </div>
 
-            {/* Developer Credit */}
-            <div className='text-center mt-10 text-sm text-gray-500'>
-                Design and Developed by{' '}
-                <a
-                    href="https://www.nextitbd.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className='text-blue-600 hover:underline'
-                >
-                    Next IT BD
-                </a>
+            {/* Bottom Strip */}
+            <div className='border-t mt-10 py-4 px-6 text-center text-gray-200'>
+                <div className='flex flex-col md:flex-row px-20 justify-between items-center max-w-7xl mx-auto gap-4'>
+                    <p>&copy; {new Date().getFullYear()} EximPort. All rights reserved.</p>
+                    <p>Developed and Design by <a className='text-green-400' href='https://www.nextitbd.com/'>Next IT Solution</a></p>
+                </div>
             </div>
         </footer>
     );

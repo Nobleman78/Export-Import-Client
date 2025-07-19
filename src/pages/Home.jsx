@@ -24,15 +24,15 @@ const Home = () => {
             </Helmet>
             <HeroSection />
             <Capabilities />
-            <Performance />
+            {/* <Performance /> */}
             <Service />
-            <ChooseUs />
-            <Promises />
+            {/* <ChooseUs /> */}
+            {/* <Promises /> */}
             <Features />
-            <WorkingPrinciple />
-            <Testimonial />
-            <OurProcess />
-            <Blog />
+            {/* <WorkingPrinciple /> */}
+            {/* <Testimonial /> */}
+            {/* <OurProcess /> */}
+            {/* <Blog /> */}
             <FAQQuoteSection />
             <CalltoAction />
         </div>
