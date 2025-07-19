@@ -20,7 +20,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Home | Eximport</title>
+                <title>Home |NextEra Logistic</title>
             </Helmet>
             <HeroSection />
             <Capabilities />

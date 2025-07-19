@@ -19,14 +19,14 @@ const testimonials = [
         role: 'Happy Customer',
         image: avatar,
         feedback:
-            'We’ve partnered with several logistics firms before, but none offered the level of transparency and support we got from Eximport. Their real-time tracking system is a game changer.',
+            'We’ve partnered with several logistics firms before, but none offered the level of transparency and support we got fromNextEra Logistic. Their real-time tracking system is a game changer.',
     },
     {
         name: 'Max Devi',
         role: 'Happy Customer',
         image: avatar,
         feedback:
-            'As a first-time exporter, I was nervous about customs and compliance. The Eximport team guided me every step of the way. Their expertise made the entire experience stress-free.',
+            'As a first-time exporter, I was nervous about customs and compliance. TheNextEra Logistic team guided me every step of the way. Their expertise made the entire experience stress-free.',
     },
     {
         name: 'Alex Mars',
@@ -47,7 +47,7 @@ const testimonials = [
         role: 'Happy Customer',
         image: avatar,
         feedback:
-            'Thanks to Eximport, we saved both time and money on our last international shipment. Their support team is responsive and very knowledgeable.',
+            'Thanks toNextEra Logistic, we saved both time and money on our last international shipment. Their support team is responsive and very knowledgeable.',
     },
 ];
 

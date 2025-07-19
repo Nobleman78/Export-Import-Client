@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import AuthContext from '../../ContextApi/AuthContext';
 import ProductCard from './ProductCard';
@@ -67,7 +67,7 @@ const Product = () => {
 
     return (
         <div className='bg-[#f5f6fa] min-h-screen py-8 px-4 lg:px-20'>
-            <Helmet><title>Products | Eximport</title></Helmet>
+            <Helmet><title>Products |NextEra Logistic</title></Helmet>
 
             <div className='max-w-7xl mx-auto'>
                 {/* Mobile Filter Button */}

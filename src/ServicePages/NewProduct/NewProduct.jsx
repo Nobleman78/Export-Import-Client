@@ -87,7 +87,7 @@ const NewProduct = () => {
 
 
             <Helmet>
-                <title> New Products | Eximport</title>
+                <title> New Products | NextEra Logistic</title>
             </Helmet>
 
 
@@ -104,8 +104,8 @@ const NewProduct = () => {
                         <FiHome className='mr-2' />
                         Home
                     </Link>
-                    <span className='mx-2'><IoIosArrowForward/></span>
-                    <Link className='flex items-center gap-2' to='/product'> Products <IoIosArrowForward className='mr-2'/></Link>
+                    <span className='mx-2'><IoIosArrowForward /></span>
+                    <Link className='flex items-center gap-2' to='/product'> Products <IoIosArrowForward className='mr-2' /></Link>
                     <span className='text-teal-500'> New Products</span>
                 </motion.div>
 

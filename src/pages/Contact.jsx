@@ -46,7 +46,7 @@ const Contact = () => {
         <div>
             <main className='lg:max-w-7xl mx-auto'>
                 <Helmet>
-                    <title>Contact | Eximport</title>
+                    <title>Contact |NextEra Logistic</title>
                 </Helmet>
                 <div className='flex flex-col md:flex-row justify-between'>
                     <div className='w-full md:w-1/2' >

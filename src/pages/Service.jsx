@@ -9,7 +9,7 @@ const Service = () => {
     return (
         <div>
             <Helmet>
-                <title>Service | Eximport</title>
+                <title>Service |NextEra Logistic</title>
             </Helmet>
             <div className='relative '>
                 <img src='https://www.solidtheme.org/themes/export004/img/ser-3.jpg'

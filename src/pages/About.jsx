@@ -70,7 +70,7 @@ const About = () => {
     return (
         <div>
             <Helmet>
-                <title>About | Eximport</title>
+                <title>About |NextEra Logistic</title>
             </Helmet>
             <main>
                 <div className='relative'>

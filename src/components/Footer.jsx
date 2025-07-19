@@ -15,7 +15,7 @@ const Footer = () => {
                 <div className='lg:w-1/3 w-full'>
                     <img onClick={() => { navigate('/'), scrollTo(0, 0) }} src={logo} alt='Logo' className='w-40 h-30 mb-4 cursor-pointer' />
                     <p>
-                        NextEra Logistics is a Bangladesh-based export-import and freight forwarding company, committed to providing smart, secure, and swift logistic solutions globally. From documentation to door-to-door delivery — we connect your trade with the world.
+                        NextEra Logistic Logistics is a Bangladesh-based export-import and freight forwarding company, committed to providing smart, secure, and swift logistic solutions globally. From documentation to door-to-door delivery — we connect your trade with the world.
                     </p>
                 </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
                                 <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
                                     <FaRegEnvelope className='text-xl' />
                                 </span>
-                                <span>logistics.nextera@gmail.com</span>
+                                <span>logistics.NextEra Logistic@gmail.com</span>
                             </p>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ const Footer = () => {
                                 <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
                                     <FaRegEnvelope className='text-xl' />
                                 </span>
-                                <span>logistics.nextera@gmail.com</span>
+                                <span>logistics.NextEra Logistic@gmail.com</span>
                             </p>
                         </div>
                     </div>
@@ -104,7 +104,7 @@ const Footer = () => {
             {/* Footer Bottom Strip */}
             <div className='border-t mt-10 py-4 px-6 text-center text-gray-200'>
                 <div className='flex flex-col md:flex-row px-4 md:px-20 justify-between items-center max-w-7xl mx-auto gap-4'>
-                    <p>&copy; {new Date().getFullYear()} EximPort. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()}NextEra Logistic. All rights reserved.</p>
                     <p>Developed and Designed by <a className='text-green-400 hover:underline' href='https://www.nextitbd.com/'>Next IT Solution</a></p>
                 </div>
             </div>
