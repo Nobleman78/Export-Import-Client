@@ -1,68 +1,102 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import logo from '../assets/NavImages/logo.png';
-import { Link } from 'react-router-dom';
+import { MdPhone } from "react-icons/md";
+import { FaRegEnvelope } from "react-icons/fa6";
+import { CiLocationOn } from "react-icons/ci";
 
 const Footer = () => {
     return (
-        <footer className='bg-teal-800 text-white pt-10 border-t border-gray-200 text-lg'>
-            <div className='max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6'>
+        <footer style={{ fontFamily: 'roboto' }} className='bg-teal-800 text-white pt-10 border-t border-gray-200 text-lg'>
+            <div className='max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-5'>
 
                 {/* Brand Info */}
-                <div>
+                <div className='lg:w-1/3 w-full'>
                     <img src={logo} alt='Logo' className='w-48 mb-4' />
                     <p>
-                        We provide comprehensive import-export solutions tailored to your business needs.
+                        NextEra Logistics is a Bangladesh-based export-import and freight forwarding company, committed to providing smart, secure, and swift logistic solutions globally. From documentation to door-to-door delivery — we connect your trade with the world.
                     </p>
                 </div>
 
-                {/* Services */}
-                <div>
-                    <h4 className='font-semibold mb-2 text-xl '>Services</h4>
-                    <ul className='space-y-1'>
-                        <Link to='/services/import' onClick={() => scrollTo(0, 0)}><li className='hover:text-green-500'>Import Solutions</li></Link>
-                        <Link to='/services/export' onClick={() => scrollTo(0, 0)}><li className='hover:text-green-500'>Export Solutions</li></Link>
-                        <Link><li>Freight Forwarding</li></Link>
-
-                    </ul>
-                </div>
-
-                {/* Contact */}
-                <div>
-                    <h4 className='font-semibold mb-2 text-xl'>Contact Us</h4>
-                    <p>Email: <a href='mailto:ask@yourdomain.com' className='text-white-600'>ask@yourdomain.com</a></p>
-                    <p>Phone: +8801610881122, +8801401791711 </p>
-                    <p>TelePhone: +880258053830</p>
-                    <p>WhatsApp: <a href='https://wa.me/8801401791719' // your WhatsApp number with country code
-                        target='_blank'
-                        rel='noopener noreferrer' className='text-blue-200 underline'>+8801401791719</a></p>
-                    <div className='flex gap-3 mt-3'>
-                        <a href='https://www.facebook.com/eximport' className='bg-[#3b5998] text-white p-2 rounded-full'><FaFacebookF /></a>
-                        <a href='https://x.com/eximport' className='bg-[#1DA1F2] text-white p-2 rounded-full'><FaTwitter /></a>
-                        {/* <a href='www.facebook.com/eximport' className='bg-[#E1306C] text-white p-2 rounded-full'><FaInstagram /></a> */}
-                        <a href='https://www.youtube.com/eximport' className='bg-[#FF0000] text-white p-2 rounded-full'><FaYoutube /></a>
-                        <a href='https://www.linkedin.com/eximport' className='bg-[#0077b5] text-white p-2 rounded-full'><FaLinkedinIn /></a>
-                    </div>
-                </div>
+                {/* Spacer */}
+                <div className='w-0 lg:w-40 mt-10'></div>
 
                 {/* Offices */}
                 <div className='flex flex-col gap-3'>
-                    <h4 className='font-semibold mb-2 text-xl'>Our Offices</h4>
-                    <p>
+                    <h4 className='font-semibold mb-2 text-2xl'>Our Offices</h4>
+
+                    {/* Dhaka */}
+                    <div>
                         <strong>Dhaka:</strong><br />
-                        <p className='mt-1'>  Address: 1301/1 East Monipur, Begum Rokeya Sarani, Mirpur-10, Dhaka-1216</p>
-                    </p>
-                    <p>
+                        <div className='flex flex-col gap-2 mt-2'>
+
+                            <p className='flex items-start gap-2 leading-snug'>
+                                <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
+                                    <CiLocationOn className='text-xl' />
+                                </span>
+                                <span>1301/1 East Monipur, Begum Rokeya Sarani, Mirpur-10, Dhaka-1216</span>
+                            </p>
+
+                            <p className='flex items-start gap-2 leading-snug'>
+                                <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
+                                    <MdPhone className='text-xl' />
+                                </span>
+                                <span>+8801610881122, +8801401791711, +880258053830</span>
+                            </p>
+
+                            <p className='flex items-start gap-2 leading-snug'>
+                                <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
+                                    <FaRegEnvelope className='text-xl' />
+                                </span>
+                                <span>logistics.nextera@gmail.com</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Hong Kong */}
+                    <div className='mt-4'>
                         <strong>HongKong:</strong><br />
-                        <p className='mt-1'>  Address: 303 Keen Hung Commercial Building 80 Queen's Road East Wanchai,Wan Chai District</p>
-                    </p>
+
+                        <p className='flex items-start gap-2 leading-snug mt-2'>
+                            <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
+                                <CiLocationOn className='text-xl' />
+                            </span>
+                            <span>303 Keen Hung Commercial Building, 80 Queen's Road East, Wanchai, Wan Chai District</span>
+                        </p>
+
+                        <p className='flex items-start gap-2 leading-snug'>
+                            <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
+                                <FaRegEnvelope className='text-xl' />
+                            </span>
+                            <span>logistics.nextera@gmail.com</span>
+                        </p>
+                    </div>
+
+                    {/* Social Media */}
+                    <div className='mt-4'>
+                        <h2 className='text-xl'>Follow Us</h2>
+                        <div className='flex gap-3 mt-3'>
+                            <a href='https://www.facebook.com/eximport' className='bg-[#3b5998] text-white w-10 h-10 flex items-center justify-center rounded-full'>
+                                <FaFacebookF />
+                            </a>
+                            <a href='https://x.com/eximport' className='bg-[#1DA1F2] text-white w-10 h-10 flex items-center justify-center rounded-full'>
+                                <FaTwitter />
+                            </a>
+                            <a href='https://www.youtube.com/eximport' className='bg-[#FF0000] text-white w-10 h-10 flex items-center justify-center rounded-full'>
+                                <FaYoutube />
+                            </a>
+                            <a href='https://www.linkedin.com/eximport' className='bg-[#0077b5] text-white w-10 h-10 flex items-center justify-center rounded-full'>
+                                <FaLinkedinIn />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            {/* Bottom Strip */}
+            {/* Footer Bottom Strip */}
             <div className='border-t mt-10 py-4 px-6 text-center text-gray-200'>
-                <div className='flex flex-col md:flex-row px-20 justify-between items-center max-w-7xl mx-auto gap-4'>
+                <div className='flex flex-col md:flex-row px-4 md:px-20 justify-between items-center max-w-7xl mx-auto gap-4'>
                     <p>&copy; {new Date().getFullYear()} EximPort. All rights reserved.</p>
-                    <p>Developed and Design by <a className='text-green-400' href='https://www.nextitbd.com/'>Next IT Solution</a></p>
+                    <p>Developed and Designed by <a className='text-green-400 hover:underline' href='https://www.nextitbd.com/'>Next IT Solution</a></p>
                 </div>
             </div>
         </footer>
