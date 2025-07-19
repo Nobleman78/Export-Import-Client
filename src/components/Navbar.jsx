@@ -86,7 +86,7 @@ const Navbar = () => {
                 {/* Logo & Mobile Search */}
                 <div className='flex flex-col lg:flex-row lg:items-center gap-5 w-4/5 lg:w-auto'>
                     <div className='flex items-center justify-between'>
-                        <img src={logo} className='cursor-pointer w-32 sm:w-auto' alt='logo' />
+                        <img onClick={() => { navigate('/').scrollTo(0, 0) }} src={logo} className='cursor-pointer w-20 h-17 sm:w-auto' alt='logo' />
                         <NavLink className='flex items-center lg:hidden'>
                             <FiSearch className='text-2xl' onClick={() => setOpenSearchBar(!openSearchBar)} />
                         </NavLink>

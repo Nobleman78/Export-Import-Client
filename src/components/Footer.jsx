@@ -3,15 +3,17 @@ import logo from '../assets/NavImages/logo.png';
 import { MdPhone } from "react-icons/md";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { CiLocationOn } from "react-icons/ci";
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+    const navigate = useNavigate()
     return (
         <footer style={{ fontFamily: 'roboto' }} className='bg-teal-800 text-white pt-10 border-t border-gray-200 text-lg'>
             <div className='max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-5'>
 
                 {/* Brand Info */}
                 <div className='lg:w-1/3 w-full'>
-                    <img src={logo} alt='Logo' className='w-48 mb-4' />
+                    <img onClick={() => { navigate('/'), scrollTo(0, 0) }} src={logo} alt='Logo' className='w-40 h-30 mb-4 cursor-pointer' />
                     <p>
                         NextEra Logistics is a Bangladesh-based export-import and freight forwarding company, committed to providing smart, secure, and swift logistic solutions globally. From documentation to door-to-door delivery — we connect your trade with the world.
                     </p>
