@@ -82,13 +82,13 @@ const Navbar = () => {
 
     return (
         <div className='sticky top-0 w-full z-50 bg-white shadow'>
-            <nav className='flex flex-col sm:flex-row items-start sm:items-center justify-between px-4 md:px-10 lg:px-20 py-5 gap-4 sm:gap-0'>
+            <nav className='flex flex-col sm:flex-row items-start  sm:items-center justify-between px-4 md:px-10 lg:px-20 py-5 gap-4 sm:gap-0'>
                 {/* Logo & Mobile Search */}
-                <div className='flex flex-col lg:flex-row lg:items-center gap-5 w-4/5 lg:w-auto'>
+                <div className='flex flex-col lg:flex-row lg:items-center gap-5 w-4/5  lg:w-auto'>
                     <div className='flex items-center justify-between'>
-                        <img onClick={() => { navigate('/').scrollTo(0, 0) }} src={logo} className='cursor-pointer w-20 h-17 sm:w-auto' alt='logo' />
+                        <img onClick={() => { navigate('/').scrollTo(0, 0) }} src={logo} className='cursor-pointer w-18 md:w-22 lg:w-20 lg:h-17 sm:w-auto' alt='logo' />
                         <NavLink className='flex items-center lg:hidden'>
-                            <FiSearch className='text-2xl' onClick={() => setOpenSearchBar(!openSearchBar)} />
+                            <FiSearch className='text-2xl md:text-3xl' onClick={() => setOpenSearchBar(!openSearchBar)} />
                         </NavLink>
                     </div>
                     <div className='flex lg:hidden items-start gap-3'>
