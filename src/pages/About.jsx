@@ -16,7 +16,7 @@ import { Helmet } from 'react-helmet';
 
 // Reusable card component
 const InfoCard = ({ title, text, image }) => (
-    <div className='rounded-2xl bg-gradient-to-r from-[#3EB492] via-[#07ecab] to-[#51c7a5] w-full'>
+    <div className='rounded-2xl bg-gradient-to-r from-[#07533e] via-[#108564] to-[#51c7a5] w-full'>
         <div className='flex flex-col lg:flex-row px-10 py-10'>
             <div className='flex flex-col gap-5 lg:w-1/2 text-white'>
                 <h2 className='text-3xl'>{title}</h2>
