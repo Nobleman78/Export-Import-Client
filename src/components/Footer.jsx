@@ -29,21 +29,21 @@ const Footer = () => {
                         <strong>Dhaka:</strong><br />
                         <div className='flex flex-col gap-2 mt-2'>
 
-                            <p className='flex items-start gap-2 leading-snug'>
+                            <p className='flex items-center gap-2 leading-snug'>
                                 <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
                                     <CiLocationOn className='text-xl' />
                                 </span>
                                 <span>1301/1 East Monipur, Begum Rokeya Sarani, Mirpur-10, Dhaka-1216</span>
                             </p>
 
-                            <p className='flex items-start gap-2 leading-snug'>
+                            <p className='flex items-center gap-2 leading-snug'>
                                 <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
                                     <MdPhone className='text-xl' />
                                 </span>
                                 <span>+8801610881122, +8801401791711, +880258053830</span>
                             </p>
 
-                            <p className='flex items-start gap-2 leading-snug'>
+                            <p className='flex items-center gap-2 leading-snug'>
                                 <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
                                     <FaRegEnvelope className='text-xl' />
                                 </span>
@@ -53,22 +53,29 @@ const Footer = () => {
                     </div>
 
                     {/* Hong Kong */}
-                    <div className='mt-4'>
+                    <div className='mt-4 '>
                         <strong>HongKong:</strong><br />
+                        <div className='flex flex-col gap-2'>
+                            <p className='flex items-start gap-2 leading-snug mt-2'>
+                                <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
+                                    <CiLocationOn className='text-xl' />
+                                </span>
+                                <span>303 Keen Hung Commercial Building, 80 Queen's Road East, Wanchai</span>
+                            </p>
+                            <p className='flex items-center gap-2 leading-snug'>
+                                <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
+                                    <MdPhone className='text-xl' />
+                                </span>
+                                <span>+85255344975</span>
+                            </p>
 
-                        <p className='flex items-start gap-2 leading-snug mt-2'>
-                            <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
-                                <CiLocationOn className='text-xl' />
-                            </span>
-                            <span>303 Keen Hung Commercial Building, 80 Queen's Road East, Wanchai, Wan Chai District</span>
-                        </p>
-
-                        <p className='flex items-start gap-2 leading-snug'>
-                            <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
-                                <FaRegEnvelope className='text-xl' />
-                            </span>
-                            <span>logistics.nextera@gmail.com</span>
-                        </p>
+                            <p className='flex items-center gap-2 leading-snug'>
+                                <span className='bg-teal-700 rounded-full w-8 h-8 flex items-center justify-center'>
+                                    <FaRegEnvelope className='text-xl' />
+                                </span>
+                                <span>logistics.nextera@gmail.com</span>
+                            </p>
+                        </div>
                     </div>
 
                     {/* Social Media */}
